@@ -61,7 +61,7 @@
     "@vercel/analytics": "^1.6.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.23.26",
+    "framer-motion": "^12.34.4",
     "katex": "^0.16.27",
     "lucide-react": "^0.562.0",
     "next": "16.1.6",
