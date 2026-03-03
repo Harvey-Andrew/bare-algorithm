@@ -1,9 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import {
-  CATEGORY_PROBLEM_EXPORTS,
-  loadProblemConfig,
-} from '@/lib/problems/problem-loaders.generated';
+import { CATEGORY_PROBLEM_EXPORTS } from '@/lib/problems/__generated__/problem-routes.generated';
+import { loadProblemConfig } from '@/lib/problems/problem-loaders.generated';
 
 describe('problem-loaders.generated', () => {
   it('contains stable export mapping for array/two-sum', () => {

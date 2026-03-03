@@ -63,7 +63,7 @@ function RendererVisualizer({
     currentStr,
     calculatedKey,
     mapState,
-    message,
+
     sortingProcess,
     countArray,
     countIndexHighlight,
@@ -100,10 +100,6 @@ function RendererVisualizer({
             );
           })}
         </div>
-      </div>
-
-      <div className="bg-slate-900 p-3 rounded text-slate-300 font-mono text-sm border border-slate-700 shadow-inner flex items-center gap-2">
-        <span className="text-blue-400">⚡ {message}</span>
       </div>
 
       {/* 动态核心运算展示区 */}

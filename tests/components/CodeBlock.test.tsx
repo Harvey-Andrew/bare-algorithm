@@ -7,6 +7,7 @@ import { CodeBlock } from '@/components/shared/CodeBlock';
 
 vi.mock('@/lib/syntax-highlighter', () => ({
   normalizeLanguage: (language?: string) => language ?? 'text',
+  ensureLanguageRegistered: async (language?: string) => language ?? 'text',
   SyntaxHighlighter: ({ children }: { children: React.ReactNode }) =>
     React.createElement('pre', { 'data-testid': 'syntax-highlighter' }, children),
 }));

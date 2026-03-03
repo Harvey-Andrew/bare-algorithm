@@ -2,10 +2,10 @@ import fs from 'fs';
 import { notFound } from 'next/navigation';
 
 import { SolutionContent } from '@/components/shared/SolutionContent';
+import { getCategoryProblemData } from '@/lib/problems/problem-catalog.generated';
 import { findProblemMeta } from '@/lib/problems/problem-data';
 import {
   getAllProblemRouteParams,
-  getProblemJsonPath,
   getSolutionContentPaths,
   isKnownProblemRoute,
 } from '@/lib/problems/problem-server';
@@ -34,21 +34,11 @@ function getSolutionContent(category: string, problem: string): string | null {
 }
 
 function getProblemMeta(category: string, problem: string): ProblemMeta | null {
-  try {
-    if (!isKnownProblemRoute(category, problem)) {
-      return null;
-    }
-
-    const jsonPath = getProblemJsonPath(category);
-    if (jsonPath && fs.existsSync(jsonPath)) {
-      const data = JSON.parse(fs.readFileSync(jsonPath, 'utf-8')) as unknown[];
-      return findProblemMeta(data, problem) || null;
-    }
-  } catch {
-    console.error(`Failed to read problem.json for ${category}`);
+  if (!isKnownProblemRoute(category, problem)) {
+    return null;
   }
 
-  return null;
+  return findProblemMeta(getCategoryProblemData(category), problem) || null;
 }
 
 interface PageProps {
@@ -101,6 +91,6 @@ export async function generateMetadata({ params }: PageProps) {
   const meta = getProblemMeta(category, problem);
 
   return {
-    title: meta?.title ? `Solution ${meta.title}` : `${problem}`,
+    title: meta?.title ? `题解 ${meta.title}` : `${problem}`,
   };
 }

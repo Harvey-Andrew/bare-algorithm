@@ -4,8 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 /**
  * 自适应缩放容器
- * 监听容器与内容的尺寸，当内容超出容器时自动等比缩放以适配。
- * 用于可视化器渲染区域，确保移动端不溢出。
+ * 监听容器与内容尺寸，当内容超出容器时按比例缩放到可视区域内。
  */
 export function ScaleToFit({ children }: { children: React.ReactNode }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -17,10 +16,9 @@ export function ScaleToFit({ children }: { children: React.ReactNode }) {
     const content = contentRef.current;
     if (!container || !content) return;
 
-    const updateScale = () => {
-      // 重置缩放以获取内容原始尺寸
-      content.style.transform = 'scale(1)';
+    let frameId: number | null = null;
 
+    const updateScale = () => {
       const cw = container.clientWidth;
       const ch = container.clientHeight;
       const sw = content.scrollWidth;
@@ -28,30 +26,38 @@ export function ScaleToFit({ children }: { children: React.ReactNode }) {
 
       if (sw <= 0 || sh <= 0) return;
 
-      const scaleX = cw / sw;
-      const scaleY = ch / sh;
-      const newScale = Math.min(scaleX, scaleY, 1); // 不放大，只缩小
-
-      setScale(newScale);
-      content.style.transform = `scale(${newScale})`;
+      const nextScale = Math.min(cw / sw, ch / sh, 1);
+      setScale((prev) => (Math.abs(prev - nextScale) < 0.001 ? prev : nextScale));
     };
 
-    // 初始计算
-    updateScale();
+    const scheduleUpdate = () => {
+      if (frameId !== null) {
+        cancelAnimationFrame(frameId);
+      }
 
-    // 监听容器尺寸变化
-    const observer = new ResizeObserver(updateScale);
-    observer.observe(container);
+      frameId = requestAnimationFrame(() => {
+        frameId = null;
+        updateScale();
+      });
+    };
 
-    // 监听内容变化（子元素增减导致尺寸变化）
-    const mutationObserver = new MutationObserver(updateScale);
-    mutationObserver.observe(content, { childList: true, subtree: true });
+    scheduleUpdate();
+
+    const resizeObserver = new ResizeObserver(scheduleUpdate);
+    resizeObserver.observe(container);
+    resizeObserver.observe(content);
+
+    const mutationObserver = new MutationObserver(scheduleUpdate);
+    mutationObserver.observe(content, { childList: true, subtree: true, characterData: true });
 
     return () => {
-      observer.disconnect();
+      if (frameId !== null) {
+        cancelAnimationFrame(frameId);
+      }
+      resizeObserver.disconnect();
       mutationObserver.disconnect();
     };
-  }, [children]);
+  }, []);
 
   return (
     <div

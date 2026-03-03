@@ -43,13 +43,13 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Export OSS snapshot
-        run: pnpm run oss:export -- --out-dir .oss-export
+        run: pnpm run oss:export -- --out-dir bare-algorithm
 
       - name: Optional build verification
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_build }}
         run: |
-          pnpm --dir .oss-export install --frozen-lockfile
-          pnpm --dir .oss-export build
+          pnpm --dir bare-algorithm install --frozen-lockfile
+          pnpm --dir bare-algorithm build
 
       - name: Push to public repository
         env:
@@ -66,7 +66,7 @@ jobs:
             exit 1
           fi
 
-          cd .oss-export
+          cd bare-algorithm
 
           git init
           git config user.name "oss-sync-bot"

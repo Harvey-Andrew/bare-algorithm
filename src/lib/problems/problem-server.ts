@@ -1,6 +1,6 @@
 import path from 'path';
 
-import { CATEGORY_PROBLEM_EXPORTS } from '@/lib/problems/problem-loaders.generated';
+import { CATEGORY_PROBLEM_EXPORTS } from '@/lib/problems/__generated__/problem-routes.generated';
 
 const SAFE_PROBLEM_ID_PATTERN = /^[a-z0-9-]+$/;
 const PROBLEMS_ROOT = path.join(process.cwd(), 'src', 'lib', 'problems');

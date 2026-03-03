@@ -1,12 +1,10 @@
 export default function ProblemLoading() {
   return (
     <div className="bg-slate-950 min-h-screen flex flex-col">
-      {/* 顶部操作栏骨架 */}
       <div className="container mx-auto px-4 py-6">
         <div className="h-14 rounded-2xl bg-slate-900 border border-slate-800 animate-pulse" />
       </div>
 
-      {/* 中部加载指示器 */}
       <div className="flex-1 flex flex-col items-center justify-center gap-8 -mt-20">
         <div className="relative h-16 w-16">
           <div className="absolute inset-0 rounded-full border-2 border-slate-800" />
@@ -20,7 +18,6 @@ export default function ProblemLoading() {
         </div>
       </div>
 
-      {/* 底部骨架区域 */}
       <div className="container mx-auto px-4 pb-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 animate-pulse">
           <div className="lg:col-span-7 h-[200px] rounded-2xl border border-slate-800 bg-slate-900/50" />

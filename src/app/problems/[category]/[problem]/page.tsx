@@ -1,14 +1,10 @@
-import fs from 'fs';
 import { notFound } from 'next/navigation';
 
 import { TypeScriptCodeHint } from '@/components/shared/TypeScriptCodeHint';
 import { ProblemVisualizerClient } from '@/components/visualizer/ProblemVisualizerClient';
+import { getCategoryProblemData } from '@/lib/problems/problem-catalog.generated';
 import { findProblemMeta } from '@/lib/problems/problem-data';
-import {
-  getAllProblemRouteParams,
-  getProblemJsonPath,
-  isKnownProblemRoute,
-} from '@/lib/problems/problem-server';
+import { getAllProblemRouteParams, isKnownProblemRoute } from '@/lib/problems/problem-server';
 
 interface ProblemMeta {
   id: string;
@@ -23,21 +19,12 @@ interface PageProps {
 }
 
 function getProblemMeta(category: string, problem: string): ProblemMeta | null {
-  try {
-    if (!isKnownProblemRoute(category, problem)) {
-      return null;
-    }
-
-    const jsonPath = getProblemJsonPath(category);
-    if (!jsonPath || !fs.existsSync(jsonPath)) {
-      return null;
-    }
-
-    const data = JSON.parse(fs.readFileSync(jsonPath, 'utf-8')) as unknown[];
-    return findProblemMeta(data, problem) || null;
-  } catch {
+  if (!isKnownProblemRoute(category, problem)) {
     return null;
   }
+
+  const data = getCategoryProblemData(category);
+  return findProblemMeta(data, problem) || null;
 }
 
 export const dynamic = 'force-static';
@@ -78,6 +65,6 @@ export async function generateMetadata({ params }: PageProps) {
   const meta = getProblemMeta(category, problem);
 
   return {
-    title: meta?.title ? `Visualization ${meta.title}` : `${problem}`,
+    title: meta?.title ? `可视化 ${meta.title}` : `${problem}`,
   };
 }

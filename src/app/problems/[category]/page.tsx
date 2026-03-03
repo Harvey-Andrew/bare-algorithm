@@ -1,5 +1,3 @@
-import fs from 'fs';
-import path from 'path';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BookOpen, Briefcase, GraduationCap } from 'lucide-react';
@@ -9,6 +7,11 @@ import { ArrayStudyRoadmap } from '@/components/shared/ArrayStudyRoadmap';
 import { BackButton } from '@/components/shared/BackButton';
 import { ProblemList } from '@/components/shared/ProblemList';
 import problemsData from '@/lib/problems/categories.json';
+import {
+  getCategoryApplicationsData,
+  getCategoryProblemData,
+  getCategoryTheoryData,
+} from '@/lib/problems/problem-catalog.generated';
 import {
   buildStudyStages,
   flattenProblemCollection,
@@ -48,41 +51,6 @@ function isSafeCategoryId(id: string): boolean {
   return /^[a-z0-9-]+$/.test(id);
 }
 
-const categoryFileCache = new Map<string, unknown[]>();
-
-async function readCategoryJson<T>(categoryId: string, fileName: string): Promise<T[]> {
-  if (!isSafeCategoryId(categoryId)) return [];
-
-  const cacheKey = `${categoryId}/${fileName}`;
-  const cachedData = categoryFileCache.get(cacheKey);
-  if (cachedData) {
-    return cachedData as T[];
-  }
-
-  const dataPath = path.join(process.cwd(), 'src/lib/problems', categoryId, fileName);
-  try {
-    const fileContent = await fs.promises.readFile(dataPath, 'utf-8');
-    const parsed = JSON.parse(fileContent);
-    const normalizedData = Array.isArray(parsed) ? parsed : [];
-    categoryFileCache.set(cacheKey, normalizedData);
-    return normalizedData as T[];
-  } catch (error: unknown) {
-    if (typeof error === 'object' && error !== null && 'code' in error && error.code !== 'ENOENT') {
-      console.error(`Failed to load ${fileName} for ${categoryId}:`, error);
-    }
-  }
-
-  return [];
-}
-
-async function getCategoryApplications(categoryId: string): Promise<ApplicationMeta[]> {
-  return readCategoryJson<ApplicationMeta>(categoryId, 'applications.json');
-}
-
-async function getCategoryTheories(categoryId: string): Promise<TheoryMeta[]> {
-  return readCategoryJson<TheoryMeta>(categoryId, 'theory.json');
-}
-
 export default async function CategoryPage({ params }: PageProps) {
   const { category: categoryId } = await params;
   const categories = problemsData as unknown as CategoryMeta[];
@@ -93,11 +61,13 @@ export default async function CategoryPage({ params }: PageProps) {
     notFound();
   }
 
-  const [problemFileData, applications, theories] = await Promise.all([
-    readCategoryJson(categoryId, 'problem.json'),
-    getCategoryApplications(categoryId),
-    getCategoryTheories(categoryId),
-  ]);
+  const problemFileData = isSafeCategoryId(categoryId) ? getCategoryProblemData(categoryId) : [];
+  const applications = (
+    isSafeCategoryId(categoryId) ? getCategoryApplicationsData(categoryId) : []
+  ) as ApplicationMeta[];
+  const theories = (
+    isSafeCategoryId(categoryId) ? getCategoryTheoryData(categoryId) : []
+  ) as TheoryMeta[];
 
   const guidedStages = buildStudyStages(problemFileData);
   const isGuided = isGuidedProblemCollection(problemFileData);

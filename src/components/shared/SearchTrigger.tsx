@@ -28,6 +28,10 @@ export function SearchTrigger({ compact = false }: SearchTriggerProps) {
     null
   );
 
+  const preloadDialog = useCallback(() => {
+    void loadSearchDialog();
+  }, []);
+
   const openDialog = useCallback(async () => {
     if (!SearchDialogComponent) {
       const LoadedSearchDialog = await loadSearchDialog();
@@ -74,6 +78,8 @@ export function SearchTrigger({ compact = false }: SearchTriggerProps) {
     <>
       <button
         onClick={() => void openDialog()}
+        onPointerEnter={preloadDialog}
+        onFocus={preloadDialog}
         className={buttonClass}
         aria-label={compact ? '搜索算法' : undefined}
       >

@@ -16,14 +16,22 @@ pnpm run oss:export
 默认情况下，导出流程执行完毕后，生成的开源代码快照会保存在项目根目录的以下文件夹中：
 
 ```text
-.oss-export/
+bare-algorithm/
 ```
+
+该目录会被视为公开仓库工作区。若 `bare-algorithm/.git` 已存在，后续重复执行 `pnpm run oss:export` 时会保留该 Git 仓库配置，不会删除远程地址、分支信息或本地提交历史。
 
 如果你希望将导出内容保存在自定义的文件路径（例如用于特定版本预览或避免覆盖之前的导出），可以通过添加参数来指定自定义输出目录：
 
 ```bash
-pnpm run oss:export -- --out-dir .oss-export-preview
+pnpm run oss:export -- --out-dir bare-algorithm-preview
 ```
+
+当前导出流程采用**增量同步**策略：
+
+- 仅在文件内容、权限或符号链接目标发生变化时才覆盖目标文件
+- 导出目录中已不存在于源仓库的多余文件会被删除
+- 导出目录根部的 `.git/` 会被保留，便于直接将 `bare-algorithm/` 作为独立公开仓库维护
 
 ## 导出规则配置 (Export Rules)
 
@@ -56,5 +64,5 @@ scripts/oss-export.config.json
 
 **工作流整体原理解析**：
 
-当自动化同步被触发时，Action 将会运行我们在本地执行一样的内部导出操作产生 `.oss-export` 目录。生成完成后，系统会将产生的全新脱敏代码快照**强制推送 (Force-push)** 至目标公开仓库的 `main` 默认分支。
+当自动化同步被触发时，Action 将会运行我们在本地执行一样的内部导出操作产生 `bare-algorithm` 目录。生成完成后，系统会将产生的全新脱敏代码快照**强制推送 (Force-push)** 至目标公开仓库的 `main` 分支。
 ⚠️ **重要提示**：此行为是以私有库作为唯一事实来源 (Single Source of Truth) 的纯覆盖操作，任何直接前往公开库主分支手动提交的代码均会在下一次同步时被完全抹除。

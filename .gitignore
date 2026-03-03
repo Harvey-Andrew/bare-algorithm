@@ -44,7 +44,9 @@ next-env.d.ts
 
 # Auto-generated files
 src/lib/problems/search-data.json
+src/lib/problems/__generated__/
 src/lib/problems/problem-loaders.generated.ts
+src/lib/problems/problem-catalog.generated.ts
 
 # AI tool temp files
 .tmp-*-skills
@@ -54,6 +56,7 @@ src/lib/problems/problem-loaders.generated.ts
 /.tmp-chrome-run/
 /.tmp-cdp-profile-*/
 /.oss-export*/
+/bare-algorithm*/
 
 # performance metrics & artifacts (do not commit to git)
 docs/performance/baseline/

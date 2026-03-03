@@ -8,6 +8,7 @@ import { FloatingCodeBarContext } from '@/components/shared/FloatingCodeBar';
 
 vi.mock('@/lib/syntax-highlighter', () => ({
   normalizeLanguage: (language?: string) => language ?? 'text',
+  ensureLanguageRegistered: async (language?: string) => language ?? 'text',
   SyntaxHighlighter: (props: {
     children: React.ReactNode;
     language: string;

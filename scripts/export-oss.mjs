@@ -11,7 +11,8 @@ const __dirname = path.dirname(__filename);
 const rootDir = path.resolve(__dirname, '..');
 
 const DEFAULT_CONFIG_PATH = path.join(rootDir, 'scripts', 'oss-export.config.json');
-const DEFAULT_OUT_DIR = path.join(rootDir, '.oss-export');
+const DEFAULT_OUT_DIR = path.join(rootDir, 'bare-algorithm');
+const MANAGED_EXPORT_DIR_PREFIXES = ['.oss-export', 'bare-algorithm'];
 
 function toPosix(filePath) {
   return filePath.replace(/\\/g, '/');
@@ -25,6 +26,16 @@ function isPathInside(parentPath, childPath) {
 function resolvePathWithin(baseDir, targetPath) {
   const resolvedPath = path.resolve(baseDir, targetPath);
   return isPathInside(baseDir, resolvedPath) ? resolvedPath : null;
+}
+
+function shouldSkipSourcePath(rootDirForCopy, sourcePath, context) {
+  const relPath = toPosix(path.relative(rootDirForCopy, sourcePath));
+  const topLevelName = relPath.split('/')[0];
+
+  return (
+    MANAGED_EXPORT_DIR_PREFIXES.some((prefix) => topLevelName.startsWith(prefix)) ||
+    context.excludeTopLevel.has(topLevelName)
+  );
 }
 
 function parseArgs(argv) {
@@ -82,6 +93,80 @@ async function writeJson(filePath, value) {
   await fs.promises.writeFile(filePath, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
 }
 
+async function readDirEntriesSafe(dirPath) {
+  if (!(await pathExists(dirPath))) {
+    return [];
+  }
+
+  return fs.promises.readdir(dirPath, { withFileTypes: true });
+}
+
+async function lstatSafe(targetPath) {
+  try {
+    return await fs.promises.lstat(targetPath);
+  } catch {
+    return null;
+  }
+}
+
+async function removePath(targetPath) {
+  await fs.promises.rm(targetPath, { recursive: true, force: true });
+}
+
+async function filesAreEqual(sourcePath, targetPath, sourceStat, targetStat) {
+  if (!targetStat?.isFile()) {
+    return false;
+  }
+
+  if (sourceStat.size !== targetStat.size) {
+    return false;
+  }
+
+  const [sourceContent, targetContent] = await Promise.all([
+    fs.promises.readFile(sourcePath),
+    fs.promises.readFile(targetPath),
+  ]);
+
+  return sourceContent.equals(targetContent);
+}
+
+async function syncFile(sourcePath, targetPath) {
+  const sourceStat = await fs.promises.stat(sourcePath);
+  const targetStat = await lstatSafe(targetPath);
+
+  if (targetStat && !targetStat.isFile()) {
+    await removePath(targetPath);
+  } else if (targetStat && (await filesAreEqual(sourcePath, targetPath, sourceStat, targetStat))) {
+    if ((targetStat.mode & 0o777) !== (sourceStat.mode & 0o777)) {
+      await fs.promises.chmod(targetPath, sourceStat.mode);
+    }
+    return;
+  }
+
+  await fs.promises.mkdir(path.dirname(targetPath), { recursive: true });
+  await fs.promises.copyFile(sourcePath, targetPath);
+  await fs.promises.chmod(targetPath, sourceStat.mode);
+}
+
+async function syncSymlink(sourcePath, targetPath) {
+  const sourceLinkTarget = await fs.promises.readlink(sourcePath);
+  const targetStat = await lstatSafe(targetPath);
+
+  if (targetStat?.isSymbolicLink()) {
+    const targetLinkTarget = await fs.promises.readlink(targetPath);
+    if (targetLinkTarget === sourceLinkTarget) {
+      return;
+    }
+  }
+
+  if (targetStat) {
+    await removePath(targetPath);
+  }
+
+  await fs.promises.mkdir(path.dirname(targetPath), { recursive: true });
+  await fs.promises.symlink(sourceLinkTarget, targetPath);
+}
+
 function isGuidedProblemCollection(data) {
   return (
     Array.isArray(data) &&
@@ -127,33 +212,48 @@ function filterProblemEntries(problemEntries, keepIds, dropEmptyGuidedStages) {
   return problemEntries.filter((problem) => keepIds.has(problem.id));
 }
 
-async function copyDirectoryRecursive(srcDir, dstDir, context) {
+async function syncDirectoryRecursive(srcDir, dstDir, context, options = {}) {
+  const preserveEntryNames = options.preserveEntryNames || new Set();
+  const targetStat = await lstatSafe(dstDir);
+
+  if (targetStat && !targetStat.isDirectory()) {
+    await removePath(dstDir);
+  }
+
   await fs.promises.mkdir(dstDir, { recursive: true });
-  const entries = await fs.promises.readdir(srcDir, { withFileTypes: true });
 
-  for (const entry of entries) {
-    const sourcePath = path.join(srcDir, entry.name);
-    const relPath = toPosix(path.relative(context.rootDir, sourcePath));
-    const topLevelName = relPath.split('/')[0];
+  const sourceEntries = await fs.promises.readdir(srcDir, { withFileTypes: true });
+  const desiredEntries = sourceEntries.filter(
+    (entry) => !shouldSkipSourcePath(context.rootDir, path.join(srcDir, entry.name), context)
+  );
+  const desiredNames = new Set(desiredEntries.map((entry) => entry.name));
+  const targetEntries = await readDirEntriesSafe(dstDir);
 
-    if (topLevelName.startsWith('.oss-export') || context.excludeTopLevel.has(topLevelName)) {
+  for (const targetEntry of targetEntries) {
+    if (preserveEntryNames.has(targetEntry.name)) {
       continue;
     }
 
+    if (!desiredNames.has(targetEntry.name)) {
+      await removePath(path.join(dstDir, targetEntry.name));
+    }
+  }
+
+  for (const entry of desiredEntries) {
+    const sourcePath = path.join(srcDir, entry.name);
     const targetPath = path.join(dstDir, entry.name);
 
     if (entry.isDirectory()) {
-      await copyDirectoryRecursive(sourcePath, targetPath, context);
+      await syncDirectoryRecursive(sourcePath, targetPath, context);
       continue;
     }
 
     if (entry.isSymbolicLink()) {
-      const symlinkTarget = await fs.promises.readlink(sourcePath);
-      await fs.promises.symlink(symlinkTarget, targetPath);
+      await syncSymlink(sourcePath, targetPath);
       continue;
     }
 
-    await fs.promises.copyFile(sourcePath, targetPath);
+    await syncFile(sourcePath, targetPath);
   }
 }
 
@@ -386,11 +486,15 @@ async function main() {
     }
   }
 
-  await fs.promises.rm(args.outDir, { recursive: true, force: true });
-  await copyDirectoryRecursive(rootDir, args.outDir, {
+  await syncDirectoryRecursive(
     rootDir,
-    excludeTopLevel,
-  });
+    args.outDir,
+    {
+      rootDir,
+      excludeTopLevel,
+    },
+    { preserveEntryNames: new Set(['.git']) }
+  );
 
   await removeConfiguredPaths(
     args.outDir,
