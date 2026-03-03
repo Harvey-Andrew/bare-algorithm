@@ -1,0 +1,17 @@
+[
+  {
+    "id": "union-find-basics",
+    "title": "并查集理论基础",
+    "description": "理解不相交集合的合并与查询，掌握路径压缩和按秩合并优化",
+    "tags": ["并查集", "不相交集合", "路径压缩", "按秩合并"],
+    "relatedProblems": ["account-merge", "number-of-islands"],
+    "link": "/problems/graph/union-find-basics"
+  },
+  {
+    "id": "graph-traversal",
+    "title": "图的遍历",
+    "description": "深度优先搜索(DFS)与广度优先搜索(BFS)的原理与应用",
+    "tags": ["图", "DFS", "BFS"],
+    "relatedProblems": ["number-of-islands", "num-courses"]
+  }
+]

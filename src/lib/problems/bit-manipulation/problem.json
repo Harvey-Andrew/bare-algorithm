@@ -1,0 +1,122 @@
+[
+  {
+    "id": "bit-fundamentals",
+    "title": "第 1 阶段：先掌握按位基础与常见恒等变换",
+    "description": "先把异或去重、位计数、幂判断等高频套路练顺。重点是二进制视角下的“消去、保留与判断”。",
+    "problems": [
+      {
+        "id": "single-number",
+        "title": "136. 只出现一次的数字",
+        "difficulty": "easy",
+        "description": "给定一个非空整数数组，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。",
+        "tags": ["数组", "位运算"],
+        "externalLinks": "https://leetcode.cn/problems/single-number/",
+        "category": "bit-manipulation"
+      },
+      {
+        "id": "number-of-1-bits",
+        "title": "191. 位 1 的个数",
+        "difficulty": "easy",
+        "description": "编写一个函数，输入是一个无符号整数（以二进制串形式），返回其二进制表达式中数字位数为 1 的个数（汉明重量）。",
+        "tags": ["位运算"],
+        "externalLinks": "https://leetcode.cn/problems/number-of-1-bits/",
+        "category": "bit-manipulation"
+      },
+      {
+        "id": "power-of-two",
+        "title": "231. 2 的幂",
+        "difficulty": "easy",
+        "description": "给你一个整数 n，请你判断该整数是否是 2 的幂次方。如果是，返回 true；否则返回 false。",
+        "tags": ["数学", "位运算"],
+        "externalLinks": "https://leetcode.cn/problems/power-of-two/",
+        "category": "bit-manipulation"
+      },
+      {
+        "id": "missing-number",
+        "title": "268. 丢失的数字",
+        "difficulty": "easy",
+        "description": "给定一个包含 [0, n] 中 n 个数的数组 nums，找出 [0, n] 这个范围内没有出现在数组中的那个数。",
+        "tags": ["数组", "哈希表", "数学", "位运算"],
+        "externalLinks": "https://leetcode.cn/problems/missing-number/",
+        "category": "bit-manipulation"
+      },
+      {
+        "id": "find-the-duplicate-number",
+        "title": "287. 寻找重复数",
+        "difficulty": "medium",
+        "description": "给定一个包含 n + 1 个整数的数组 nums ，其数字都在 [1, n] 范围内（包括 1 和 n），可知至少存在一个重复的整数。假设 nums 只有 一个重复的整数 ，返回 这个重复的数 。",
+        "tags": ["位运算", "数组", "双指针", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/find-the-duplicate-number/",
+        "category": "bit-manipulation"
+      },
+      {
+        "id": "next-permutation",
+        "title": "31. 下一个排列",
+        "difficulty": "medium",
+        "description": "整数数组的一个 排列  就是将其所有成员以序列或线性顺序排列。实现获取 下一个排列 的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。",
+        "tags": ["数组", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/next-permutation/",
+        "category": "bit-manipulation"
+      }
+    ]
+  },
+  {
+    "id": "bit-dp-arithmetic",
+    "title": "第 2 阶段：学会位运算驱动的 DP 与加法模拟",
+    "description": "这一阶段重点是利用低位状态递推和位运算规则做计算，避免直接依赖常规算术运算。",
+    "problems": [
+      {
+        "id": "counting-bits",
+        "title": "338. 比特位计数",
+        "difficulty": "easy",
+        "description": "给你一个整数 n，对于 0 <= i <= n 中的每个 i，计算其二进制表示中 1 的个数，返回长度为 n + 1 的数组。",
+        "tags": ["位运算", "动态规划"],
+        "externalLinks": "https://leetcode.cn/problems/counting-bits/",
+        "category": "bit-manipulation"
+      },
+      {
+        "id": "sum-of-two-integers",
+        "title": "371. 两整数之和",
+        "difficulty": "medium",
+        "description": "给你两个整数 a 和 b，不使用运算符 + 和 -，计算并返回两整数之和。",
+        "tags": ["数学", "位运算"],
+        "externalLinks": "https://leetcode.cn/problems/sum-of-two-integers/",
+        "category": "bit-manipulation"
+      },
+      {
+        "id": "bitwise-and-of-numbers-range",
+        "title": "201. 数字范围按位与",
+        "difficulty": "medium",
+        "description": "给你两个整数 left 和 right，表示区间 [left, right]，返回此区间内所有数字按位与的结果（包含 left、right 端点）。",
+        "tags": ["位运算"],
+        "externalLinks": "https://leetcode.cn/problems/bitwise-and-of-numbers-range/",
+        "category": "bit-manipulation"
+      }
+    ]
+  },
+  {
+    "id": "bitmask-xor",
+    "title": "第 3 阶段：进阶到异或分组与位掩码建模",
+    "description": "最后训练“把信息压到 bitmask”这类题型。核心是用位集合快速表达状态，再配合异或性质做拆分。",
+    "problems": [
+      {
+        "id": "single-number-iii",
+        "title": "260. 只出现一次的数字 III",
+        "difficulty": "medium",
+        "description": "给定一个整数数组 nums，其中恰好有两个元素只出现一次，其余所有元素均出现两次，找出这两个只出现一次的元素。",
+        "tags": ["数组", "位运算"],
+        "externalLinks": "https://leetcode.cn/problems/single-number-iii/",
+        "category": "bit-manipulation"
+      },
+      {
+        "id": "maximum-product-of-word-lengths",
+        "title": "318. 最大单词长度乘积",
+        "difficulty": "medium",
+        "description": "给你一个字符串数组 words，找出并返回 length(words[i]) * length(words[j]) 的最大值，并且这两个单词不含有公共字母。如果不存在这样的两个单词，返回 0。",
+        "tags": ["数组", "字符串", "位运算", "位掩码"],
+        "externalLinks": "https://leetcode.cn/problems/maximum-product-of-word-lengths/",
+        "category": "bit-manipulation"
+      }
+    ]
+  }
+]

@@ -1,0 +1,201 @@
+[
+  {
+    "title": "第 1 阶段：先把线性扫描练顺",
+    "description": "先练“扫一遍数组时，手里到底要维护什么状态”。这一阶段先不追求花哨技巧，重点是下标、顺序和原地修改。",
+    "problems": [
+      {
+        "id": "two-sum",
+        "title": "1. 两数之和",
+        "difficulty": "easy",
+        "description": "给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。",
+        "tags": ["数组", "哈希表"],
+        "externalLinks": "https://leetcode.cn/problems/two-sum/",
+        "category": "array"
+      },
+      {
+        "id": "remove-duplicates-from-sorted-array",
+        "title": "26. 删除有序数组中的重复项",
+        "difficulty": "easy",
+        "description": "给你一个 非严格递增排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素的相对顺序保持一致。返回 nums 中唯一元素的个数。",
+        "tags": ["数组", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/remove-duplicates-from-sorted-array/",
+        "category": "two-pointers"
+      },
+      {
+        "id": "move-zeroes",
+        "title": "283. 移动零",
+        "difficulty": "easy",
+        "description": "给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。",
+        "tags": ["数组", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/move-zeroes/",
+        "category": "array"
+      },
+      {
+        "id": "merge-sorted-array",
+        "title": "88. 合并两个有序数组",
+        "difficulty": "easy",
+        "description": "给你两个按 非递减顺序 排列的整数数组 nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。",
+        "tags": ["数组", "双指针", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/merge-sorted-array/",
+        "category": "array"
+      },
+      {
+        "id": "best-time-to-buy-and-sell-stock",
+        "title": "121. 买卖股票的最佳时机",
+        "difficulty": "easy",
+        "description": "给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。",
+        "tags": ["数组", "动态规划"],
+        "externalLinks": "https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/",
+        "category": "array"
+      }
+    ],
+    "id": "warmup"
+  },
+  {
+    "title": "第 2 阶段：学会从局部规则推出全局答案",
+    "description": "这里开始把“一次扫描”做出层次。你会接触候选人抵消、局部最优延续、翻转重排和区间排序。",
+    "problems": [
+      {
+        "id": "majority-element",
+        "title": "169. 多数元素",
+        "difficulty": "easy",
+        "description": "给定一个大小为 n 的数组 nums ，返回其中的多数元素。多数元素是指在数组中出现次数 大于 ⌊ n/2 ⌋ 的元素。",
+        "tags": ["数组", "哈希表", "分治", "排序", "计数"],
+        "externalLinks": "https://leetcode.cn/problems/majority-element/",
+        "category": "array"
+      },
+      {
+        "id": "maximum-subarray",
+        "title": "53. 最大子数组和",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。",
+        "tags": ["数组", "分治", "动态规划"],
+        "externalLinks": "https://leetcode.cn/problems/maximum-subarray/",
+        "category": "array"
+      },
+      {
+        "id": "rotate-array",
+        "title": "189. 轮转数组",
+        "difficulty": "medium",
+        "description": "给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。",
+        "tags": ["数组", "数学", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/rotate-array/",
+        "category": "array"
+      },
+      {
+        "id": "merge-intervals",
+        "title": "56. 合并区间",
+        "difficulty": "medium",
+        "description": "以数组 intervals 表示若干个区间的集合，其中 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回 一个不重叠的区间数组。",
+        "tags": ["数组", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/merge-intervals/",
+        "category": "array"
+      },
+      {
+        "id": "insert-interval",
+        "title": "57. 插入区间",
+        "difficulty": "medium",
+        "description": "给你一个 无重叠的 ，按照区间起始端点排序的区间列表 intervals。请你将一个新区间 newInterval 插入到 intervals 中，使得 intervals 依然保持有序且不重叠。",
+        "tags": ["数组"],
+        "externalLinks": "https://leetcode.cn/problems/insert-interval/",
+        "category": "sorting-intervals"
+      }
+    ],
+    "id": "scan"
+  },
+  {
+    "title": "第 3 阶段：把一维思路推广到前缀和和矩阵",
+    "description": "这一阶段是数组专题真正拉开差距的部分。核心是拆贡献、改写区间和，以及把二维题写成边界或标记问题。",
+    "problems": [
+      {
+        "id": "product-of-array-except-self",
+        "title": "238. 除了自身以外数组的乘积",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums，返回 数组 answer ，其中 answer[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积。",
+        "tags": ["数组", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/product-of-array-except-self/",
+        "category": "array"
+      },
+      {
+        "id": "set-matrix-zeroes",
+        "title": "73. 矩阵置零",
+        "difficulty": "medium",
+        "description": "给定一个 m x n 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法。",
+        "tags": ["数组", "哈希表", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/set-matrix-zeroes/",
+        "category": "array"
+      },
+      {
+        "id": "spiral-matrix",
+        "title": "54. 螺旋矩阵",
+        "difficulty": "medium",
+        "description": "给你一个 m 行 n 列的矩阵 matrix，请按照顺时针螺旋顺序，返回矩阵中的所有元素。",
+        "tags": ["数组", "矩阵", "模拟"],
+        "externalLinks": "https://leetcode.cn/problems/spiral-matrix/",
+        "category": "array"
+      },
+      {
+        "id": "rotate-image",
+        "title": "48. 旋转图像",
+        "difficulty": "medium",
+        "description": "给定一个 n × n 的二维矩阵 matrix 表示一个图像。请你将图像顺时针旋转 90 度。你必须在 原地 旋转图像。",
+        "tags": ["数组", "数学", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/rotate-image/",
+        "category": "array"
+      },
+      {
+        "id": "search-a-2d-matrix-ii",
+        "title": "240. 搜索二维矩阵 II",
+        "difficulty": "medium",
+        "description": "编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target。该矩阵具有特性：每行的元素从左到右升序排列，每列的元素从上到下升序排列。",
+        "tags": ["数组", "二分查找", "分治", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/search-a-2d-matrix-ii/",
+        "category": "array"
+      },
+      {
+        "id": "subarray-sum-equals-k",
+        "title": "560. 和为 K 的子数组",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。",
+        "tags": ["数组", "哈希表", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/subarray-sum-equals-k/",
+        "category": "array"
+      }
+    ],
+    "id": "prefix-matrix"
+  },
+  {
+    "title": "第 4 阶段：冲击高频进阶题",
+    "description": "最后开始处理选择问题和高阶原地哈希。不要只背解法，要能解释为什么这些题都在减少无效比较。",
+    "problems": [
+      {
+        "id": "kth-largest-element-in-an-array",
+        "title": "215. 数组中的第K个最大元素",
+        "difficulty": "medium",
+        "description": "给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。",
+        "tags": ["数组", "分治", "排序", "堆", "快速选择"],
+        "externalLinks": "https://leetcode.cn/problems/kth-largest-element-in-an-array/",
+        "category": "array"
+      },
+      {
+        "id": "find-all-numbers-disappeared-in-an-array",
+        "title": "448. 找到所有数组中消失的数字",
+        "difficulty": "easy",
+        "description": "给你一个含 n 个整数的数组 nums ，其中 nums[i] 在区间 [1, n] 内。请找出所有在 [1, n] 范围内但没有出现在 nums 中的数字。",
+        "tags": ["数组", "哈希表"],
+        "externalLinks": "https://leetcode.cn/problems/find-all-numbers-disappeared-in-an-array/",
+        "category": "array"
+      },
+      {
+        "id": "first-missing-positive",
+        "title": "41. 缺失的第一个正数",
+        "difficulty": "hard",
+        "description": "给你一个未排序的整数数组 nums，请你找出其中没有出现的最小的正整数。请你实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案。",
+        "tags": ["数组", "哈希表"],
+        "externalLinks": "https://leetcode.cn/problems/first-missing-positive/",
+        "category": "array"
+      }
+    ],
+    "id": "advanced"
+  }
+]

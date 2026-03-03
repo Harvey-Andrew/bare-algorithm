@@ -1,0 +1,77 @@
+[
+  {
+    "id": "trie-basics",
+    "title": "第 1 阶段：先把字典树基础接口与节点模型打牢",
+    "description": "先练习 Trie 的插入、精确匹配和前缀匹配，建立“按字符逐层下沉”的核心建模方式。",
+    "problems": [
+      {
+        "id": "implement-trie-prefix-tree",
+        "title": "208. 实现 Trie（前缀树）",
+        "difficulty": "medium",
+        "description": "Trie 是一种用于高效存储和检索字符串集合的树形结构。实现 Trie 的 insert、search 和 startsWith 接口。",
+        "tags": ["哈希表", "字符串", "设计", "字典树"],
+        "externalLinks": "https://leetcode.cn/problems/implement-trie-prefix-tree/",
+        "category": "string"
+      },
+      {
+        "id": "design-add-and-search-words-data-structure",
+        "title": "211. 添加与搜索单词",
+        "difficulty": "medium",
+        "description": "设计数据结构支持添加单词和查询匹配，查询串可包含 '.' 通配符。",
+        "tags": ["字符串", "深度优先搜索", "设计", "字典树"],
+        "externalLinks": "https://leetcode.cn/problems/design-add-and-search-words-data-structure/",
+        "category": "trie"
+      }
+    ]
+  },
+  {
+    "id": "prefix-application",
+    "title": "第 2 阶段：掌握前缀匹配在文本与网格中的应用",
+    "description": "这一阶段把字典树用于真实搜索场景，重点是前缀剪枝、回溯协作与批量匹配。",
+    "problems": [
+      {
+        "id": "replace-words",
+        "title": "648. 单词替换",
+        "difficulty": "medium",
+        "description": "给定词根字典和句子，用最短可匹配词根替换继承词，返回替换后的句子。",
+        "tags": ["数组", "哈希表", "字符串", "字典树"],
+        "externalLinks": "https://leetcode.cn/problems/replace-words/",
+        "category": "trie"
+      },
+      {
+        "id": "word-search-ii",
+        "title": "212. 单词搜索 II",
+        "difficulty": "hard",
+        "description": "给定二维字符网格和单词表，找出所有可以在网格中由相邻字符构成的单词。",
+        "tags": ["数组", "字符串", "回溯", "字典树", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/word-search-ii/",
+        "category": "trie"
+      }
+    ]
+  },
+  {
+    "id": "trie-advanced-variants",
+    "title": "第 3 阶段：进阶到数据流与按位字典树变体",
+    "description": "最后处理 Trie 的两类进阶形态：反向后缀匹配的数据流模型，以及按位分支的 XOR 最值模型。",
+    "problems": [
+      {
+        "id": "stream-of-characters",
+        "title": "1032. 字符流",
+        "difficulty": "hard",
+        "description": "设计一个算法持续接收字符流，并判断当前后缀是否匹配 words 中任一单词。",
+        "tags": ["数组", "字符串", "设计", "字典树"],
+        "externalLinks": "https://leetcode.cn/problems/stream-of-characters/",
+        "category": "trie"
+      },
+      {
+        "id": "maximum-xor-of-two-numbers",
+        "title": "421. 数组中两个数的最大异或值",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums，返回任意两数异或结果的最大值。",
+        "tags": ["数组", "哈希表", "位运算", "字典树"],
+        "externalLinks": "https://leetcode.cn/problems/maximum-xor-of-two-numbers-in-an-array/",
+        "category": "trie"
+      }
+    ]
+  }
+]

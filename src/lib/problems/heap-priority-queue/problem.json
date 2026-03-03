@@ -1,0 +1,104 @@
+[
+  {
+    "title": "第 1 阶段：先把堆的最值维护与固定容量模型练熟",
+    "description": "先建立“反复取最值为什么用堆”的直觉。重点是识别大顶堆、小顶堆和固定容量堆，以及每次插入后该淘汰谁。",
+    "problems": [
+      {
+        "id": "last-stone-weight",
+        "title": "1046. 最后一块石头的重量",
+        "difficulty": "easy",
+        "description": "有一堆石头，每块石头的重量都是正整数。每一回合，从中选出两块最重的石头，然后将它们一起粉碎。",
+        "tags": ["数组", "堆"],
+        "externalLinks": "https://leetcode.cn/problems/last-stone-weight/",
+        "category": "heap-priority-queue"
+      },
+      {
+        "id": "kth-largest-element-in-an-array",
+        "title": "215. 数组中的第 K 个最大元素",
+        "difficulty": "medium",
+        "description": "给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。",
+        "tags": ["数组", "堆", "快速选择"],
+        "externalLinks": "https://leetcode.cn/problems/kth-largest-element-in-an-array/",
+        "category": "array"
+      },
+      {
+        "id": "kth-largest-element-in-a-stream",
+        "title": "703. 数据流中的第 K 大元素",
+        "difficulty": "easy",
+        "description": "设计一个找到数据流中第 k 大元素的类。注意是排序后的第 k 大元素，不是第 k 个不同的元素。",
+        "tags": ["堆", "设计"],
+        "externalLinks": "https://leetcode.cn/problems/kth-largest-element-in-a-stream/",
+        "category": "heap-priority-queue"
+      }
+    ],
+    "id": "heap-basics"
+  },
+  {
+    "title": "第 2 阶段：掌握 TopK 统计与自定义比较器",
+    "description": "这一阶段把堆和哈希表、字符串、几何距离结合起来。核心是维护一个容量为 K 的候选池，持续淘汰不可能进入答案的元素。",
+    "problems": [
+      {
+        "id": "top-k-frequent-elements",
+        "title": "347. 前 K 个高频元素",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums 和一个整数 k，请你返回其中出现频率前 k 高的元素。你可以按任意顺序返回答案。",
+        "tags": ["数组", "哈希表", "堆"],
+        "externalLinks": "https://leetcode.cn/problems/top-k-frequent-elements/",
+        "category": "hash-table"
+      },
+      {
+        "id": "top-k-frequent-words",
+        "title": "692. 前 K 个高频单词",
+        "difficulty": "medium",
+        "description": "给定一个单词列表 words 和一个整数 k，返回前 k 个出现次数最多的单词。",
+        "tags": ["哈希表", "字符串", "堆"],
+        "externalLinks": "https://leetcode.cn/problems/top-k-frequent-words/",
+        "category": "heap-priority-queue"
+      },
+      {
+        "id": "k-closest-points-to-origin",
+        "title": "973. 最接近原点的 K 个点",
+        "difficulty": "medium",
+        "description": "给定一个数组 points，其中 points[i] = [xi, yi] 表示 X-Y 平面上的一个点，并且给定一个整数 k，返回离原点 (0,0) 最近的 k 个点。",
+        "tags": ["几何", "堆", "快速选择"],
+        "externalLinks": "https://leetcode.cn/problems/k-closest-points-to-origin/",
+        "category": "heap-priority-queue"
+      }
+    ],
+    "id": "top-k"
+  },
+  {
+    "title": "第 3 阶段：学会用优先队列做多路归并与数据流设计",
+    "description": "最后处理堆专题的进阶模型：多个有序来源的归并，以及两部分数据的动态平衡。核心是把“谁先出队”和“边界如何维护”拆开思考。",
+    "problems": [
+      {
+        "id": "merge-k-sorted-lists",
+        "title": "23. 合并 K 个升序链表",
+        "difficulty": "hard",
+        "description": "给你一个链表数组，每个链表都已经按升序排列。请你将所有链表合并到一个升序链表中，返回合并后的链表。",
+        "tags": ["链表", "堆", "分治"],
+        "externalLinks": "https://leetcode.cn/problems/merge-k-sorted-lists/",
+        "category": "divide-and-conquer"
+      },
+      {
+        "id": "kth-smallest-element-in-a-sorted-matrix",
+        "title": "378. 有序矩阵中第 K 小的元素",
+        "difficulty": "medium",
+        "description": "给你一个 n x n 矩阵 matrix，其中每行和每列元素均按升序排序，找到矩阵中第 k 小的元素。",
+        "tags": ["数组", "二分查找", "堆"],
+        "externalLinks": "https://leetcode.cn/problems/kth-smallest-element-in-a-sorted-matrix/",
+        "category": "heap-priority-queue"
+      },
+      {
+        "id": "find-median-from-data-stream",
+        "title": "295. 数据流的中位数",
+        "difficulty": "hard",
+        "description": "中位数是有序整数列表中间的数。如果列表长度是偶数，则中位数是两个中间数的平均值。请实现 MedianFinder 类。",
+        "tags": ["堆", "设计"],
+        "externalLinks": "https://leetcode.cn/problems/find-median-from-data-stream/",
+        "category": "heap-priority-queue"
+      }
+    ],
+    "id": "merge-and-stream"
+  }
+]

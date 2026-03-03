@@ -1,0 +1,72 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+/test-results
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Auto-generated files
+src/lib/problems/search-data.json
+src/lib/problems/problem-loaders.generated.ts
+
+# AI tool temp files
+.tmp-*-skills
+.tmp-*-skills-*
+
+# local browser test temp data
+/.tmp-chrome-run/
+/.tmp-cdp-profile-*/
+/.oss-export*/
+
+# performance metrics & artifacts (do not commit to git)
+docs/performance/baseline/
+docs/performance/optimized/
+docs/performance/drilldown/
+docs/performance/reports/
+docs/performance/bundle-analysis/
+
+# security audit artifacts (auto-generated)
+docs/security/audit-raw.json
+docs/security/reports/
+docs/security/license-audit.csv
+
+# testing reports (auto-generated)
+docs/testing/reports/
+directory_consistency_report.csv

@@ -1,0 +1,131 @@
+[
+  {
+    "id": "stage-1",
+    "title": "第 1 阶段：先把栈和队列基本操作练扎实",
+    "description": "先熟悉括号匹配、最小栈、双栈双队列模拟和基础设计题。重点是入栈出栈顺序、辅助结构和边界条件。",
+    "problems": [
+      {
+        "id": "valid-parentheses",
+        "title": "20. 有效的括号",
+        "difficulty": "easy",
+        "description": "给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。",
+        "tags": ["栈", "字符串"],
+        "externalLinks": "https://leetcode.cn/problems/valid-parentheses/",
+        "category": "string"
+      },
+      {
+        "id": "implement-queue-using-stacks",
+        "title": "232. 用栈实现队列",
+        "difficulty": "easy",
+        "description": "请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）。",
+        "tags": ["栈", "设计", "队列"],
+        "externalLinks": "https://leetcode.cn/problems/implement-queue-using-stacks/",
+        "category": "stack-queue"
+      },
+      {
+        "id": "implement-stack-using-queues",
+        "title": "225. 用队列实现栈",
+        "difficulty": "easy",
+        "description": "请你仅使用两个队列实现一个后入先出（LIFO）的栈，并支持普通栈的全部四种操作（push、top、pop 和 empty）。",
+        "tags": ["栈", "设计", "队列"],
+        "externalLinks": "https://leetcode.cn/problems/implement-stack-using-queues/",
+        "category": "stack-queue"
+      },
+      {
+        "id": "min-stack",
+        "title": "155. 最小栈",
+        "difficulty": "medium",
+        "description": "设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。",
+        "tags": ["栈", "设计"],
+        "externalLinks": "https://leetcode.cn/problems/min-stack/",
+        "category": "stack-queue"
+      },
+      {
+        "id": "number-of-recent-calls",
+        "title": "933. 最近的请求次数",
+        "difficulty": "easy",
+        "description": "写一个 RecentCounter 类来计算特定时间范围内最近的请求。",
+        "tags": ["队列", "设计", "数据流"],
+        "externalLinks": "https://leetcode.cn/problems/number-of-recent-calls/",
+        "category": "stack-queue"
+      },
+      {
+        "id": "design-circular-queue",
+        "title": "622. 设计循环队列",
+        "difficulty": "medium",
+        "description": "设计你的循环队列实现。 循环队列是一种线性数据结构，其操作表现基于 FIFO（先进先出）原则并且队尾被连接在队首之后以形成一个循环。",
+        "tags": ["数组", "链表", "设计", "队列"],
+        "externalLinks": "https://leetcode.cn/problems/design-circular-queue/",
+        "category": "stack-queue"
+      }
+    ]
+  },
+  {
+    "id": "stage-2",
+    "title": "第 2 阶段：学会用栈解析表达式和字符串",
+    "description": "这一阶段开始处理路径化简、逆波兰表达式和括号展开。目标是把“延迟计算”和“局部结果回填”写稳定。",
+    "problems": [
+      {
+        "id": "decode-string",
+        "title": "394. 字符串解码",
+        "difficulty": "medium",
+        "description": "给定一个经过编码的字符串，返回它解码后的字符串。编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。",
+        "tags": ["栈", "字符串", "递归"],
+        "externalLinks": "https://leetcode.cn/problems/decode-string/",
+        "category": "stack-queue"
+      },
+      {
+        "id": "evaluate-reverse-polish-notation",
+        "title": "150. 逆波兰表达式求值",
+        "difficulty": "medium",
+        "description": "给你一个字符串数组 tokens ，表示一个根据 逆波兰表示法 表示的算术表达式。请你计算该表达式。返回一个表示表达式值的整数。",
+        "tags": ["数组", "数学", "栈"],
+        "externalLinks": "https://leetcode.cn/problems/evaluate-reverse-polish-notation/",
+        "category": "stack-queue"
+      },
+      {
+        "id": "simplify-path",
+        "title": "71. 简化路径",
+        "difficulty": "medium",
+        "description": "给你一个字符串 path ，表示指向某一文件或目录的 Unix 风格 绝对路径 （以 '/' 开头），请你将其转化为更加简洁的规范路径。",
+        "tags": ["栈", "字符串"],
+        "externalLinks": "https://leetcode.cn/problems/simplify-path/",
+        "category": "stack-queue"
+      },
+      {
+        "id": "basic-calculator-ii",
+        "title": "227. 基本计算器 II",
+        "difficulty": "medium",
+        "description": "给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。整数除法仅保留整数部分。",
+        "tags": ["数学", "栈"],
+        "externalLinks": "https://leetcode.cn/problems/basic-calculator-ii/",
+        "category": "stack-queue"
+      },
+      {
+        "id": "basic-calculator",
+        "title": "224. 基本计算器",
+        "difficulty": "hard",
+        "description": "给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。",
+        "tags": ["数学", "栈", "递归"],
+        "externalLinks": "https://leetcode.cn/problems/basic-calculator/",
+        "category": "stack-queue"
+      }
+    ]
+  },
+  {
+    "id": "stage-3",
+    "title": "第 3 阶段：掌握单调队列和复杂窗口模型",
+    "description": "最后进入滑动窗口最大值这类综合题，重点理解队列里为什么只保留可能成为答案的元素。",
+    "problems": [
+      {
+        "id": "sliding-window-maximum",
+        "title": "239. 滑动窗口最大值",
+        "difficulty": "hard",
+        "description": "给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。",
+        "tags": ["队列", "滑动窗口", "堆", "单调队列"],
+        "externalLinks": "https://leetcode.cn/problems/sliding-window-maximum/",
+        "category": "stack-queue"
+      }
+    ]
+  }
+]

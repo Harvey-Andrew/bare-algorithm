@@ -1,0 +1,80 @@
+name: OSS Sync
+
+on:
+  workflow_dispatch:
+    inputs:
+      verify_build:
+        description: Verify build in exported OSS workspace
+        required: false
+        default: false
+        type: boolean
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: oss-sync-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    name: Export and Sync Public Repo
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Export OSS snapshot
+        run: pnpm run oss:export -- --out-dir .oss-export
+
+      - name: Optional build verification
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.verify_build }}
+        run: |
+          pnpm --dir .oss-export install --frozen-lockfile
+          pnpm --dir .oss-export build
+
+      - name: Push to public repository
+        env:
+          OSS_REPO: ${{ secrets.OSS_REPO }}
+          OSS_SYNC_TOKEN: ${{ secrets.OSS_SYNC_TOKEN }}
+        run: |
+          if [ -z "$OSS_REPO" ]; then
+            echo "Missing secret OSS_REPO (format: owner/repo)."
+            exit 1
+          fi
+
+          if [ -z "$OSS_SYNC_TOKEN" ]; then
+            echo "Missing secret OSS_SYNC_TOKEN."
+            exit 1
+          fi
+
+          cd .oss-export
+
+          git init
+          git config user.name "oss-sync-bot"
+          git config user.email "oss-sync-bot@users.noreply.github.com"
+          git checkout -b main
+
+          git add .
+          git commit -m "chore: sync from private repo ${GITHUB_SHA}" || echo "No content changes detected."
+
+          git remote add origin "https://x-access-token:${OSS_SYNC_TOKEN}@github.com/${OSS_REPO}.git"
+          git push --force origin main

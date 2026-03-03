@@ -1,0 +1,221 @@
+[
+  {
+    "id": "stage-1",
+    "title": "第 1 阶段：哈希映射与基本词频统计",
+    "description": "掌握哈希表、集合的基本用法，能迅速判断元素存在性、统计词频，并把字符串映射关系写稳。",
+    "problems": [
+      {
+        "id": "contains-duplicate",
+        "title": "217. 存在重复元素",
+        "difficulty": "medium",
+        "description": "暂无描述",
+        "tags": [],
+        "externalLinks": "https://leetcode.cn/problems/contains-duplicate/",
+        "category": "hash-table"
+      },
+      {
+        "id": "valid-anagram",
+        "title": "242. 有效的字母异位词",
+        "difficulty": "easy",
+        "description": "给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。",
+        "tags": ["哈希表", "字符串", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/valid-anagram/",
+        "category": "hash-table"
+      },
+      {
+        "id": "first-unique-character-in-a-string",
+        "title": "387. 字符串中的第一个唯一字符",
+        "difficulty": "medium",
+        "description": "暂无描述",
+        "tags": [],
+        "externalLinks": "https://leetcode.cn/problems/first-unique-character-in-a-string/",
+        "category": "hash-table"
+      },
+      {
+        "id": "word-pattern",
+        "title": "290. 单词规律",
+        "difficulty": "easy",
+        "description": "给定一种规律 pattern 和一个字符串 s ，判断 s 是否遵循相同的规律。",
+        "tags": ["哈希表", "字符串"],
+        "externalLinks": "https://leetcode.cn/problems/word-pattern/",
+        "category": "hash-table"
+      },
+      {
+        "id": "isomorphic-strings",
+        "title": "205. 同构字符串",
+        "difficulty": "easy",
+        "description": "给定两个字符串 s 和 t ，判断它们是否是同构的。",
+        "tags": ["哈希表", "字符串"],
+        "externalLinks": "https://leetcode.cn/problems/isomorphic-strings/",
+        "category": "hash-table"
+      },
+      {
+        "id": "ransom-note",
+        "title": "383. 赎金信",
+        "difficulty": "easy",
+        "description": "给你两个字符串：ransomNote 和 magazine ，判断 ransomNote 能不能由 magazine 里面的字符构成。如果可以，返回 true ；否则返回 false 。",
+        "tags": ["哈希表", "字符串", "计数"],
+        "externalLinks": "https://leetcode.cn/problems/ransom-note/",
+        "category": "hash-table"
+      },
+      {
+        "id": "jewels-and-stones",
+        "title": "771. 宝石与石头",
+        "difficulty": "easy",
+        "description": "给你一个字符串 jewels 代表石头中宝石的类型，另有一个字符串 stones 代表你拥有的石头。 stones 中每个字符代表了一种你拥有的石头的类型，你想知道你拥有的石头中有多少是宝石。",
+        "tags": ["哈希表", "字符串"],
+        "externalLinks": "https://leetcode.cn/problems/jewels-and-stones/",
+        "category": "hash-table"
+      },
+      {
+        "id": "longest-palindrome",
+        "title": "409. 最长回文串",
+        "difficulty": "easy",
+        "description": "给定一个包含大写字母和小写字母的字符串 s ，返回 通过这些字母构造成的 最长的回文串的长度。",
+        "tags": ["哈希表", "字符串", "贪心"],
+        "externalLinks": "https://leetcode.cn/problems/longest-palindrome/",
+        "category": "hash-table"
+      }
+    ]
+  },
+  {
+    "id": "stage-2",
+    "title": "第 2 阶段：多数组交集与两数之和",
+    "description": "通过构建哈希表实现跨数组元素匹配，掌握“边存边查”的经典两数之和套路，并练习多集合之间的快速对齐。",
+    "problems": [
+      {
+        "id": "intersection-of-two-arrays",
+        "title": "349. 两个数组的交集",
+        "difficulty": "medium",
+        "description": "暂无描述",
+        "tags": [],
+        "externalLinks": "https://leetcode.cn/problems/intersection-of-two-arrays/",
+        "category": "hash-table"
+      },
+      {
+        "id": "two-sum",
+        "title": "1. 两数之和",
+        "difficulty": "medium",
+        "description": "暂无描述",
+        "tags": [],
+        "externalLinks": "https://leetcode.cn/problems/two-sum/",
+        "category": "array"
+      },
+      {
+        "id": "4sum-ii",
+        "title": "454. 四数相加 II",
+        "difficulty": "medium",
+        "description": "暂无描述",
+        "tags": [],
+        "externalLinks": "https://leetcode.cn/problems/4sum-ii/",
+        "category": "hash-table"
+      },
+      {
+        "id": "group-anagrams",
+        "title": "49. 字母异位词分组",
+        "difficulty": "medium",
+        "description": "给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。",
+        "tags": ["哈希表", "字符串", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/group-anagrams/",
+        "category": "hash-table"
+      },
+      {
+        "id": "valid-sudoku",
+        "title": "36. 有效的数独",
+        "difficulty": "medium",
+        "description": "请你判断一个 9 x 9 的数独是否有效。只需要 根据以下规则 ，验证已经填入的数字是否有效即可。",
+        "tags": ["数组", "哈希表", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/valid-sudoku/",
+        "category": "hash-table"
+      }
+    ]
+  },
+  {
+    "id": "stage-3",
+    "title": "第 3 阶段：原地哈希与滑动窗口结合",
+    "description": "结合滑动窗口维护区间状态，处理连续序列问题及设计复杂的哈希数据结构，同时建立工程化哈希设计题的整体感觉。",
+    "problems": [
+      {
+        "id": "longest-consecutive-sequence",
+        "title": "128. 最长连续序列",
+        "difficulty": "medium",
+        "description": "给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。",
+        "tags": ["数组", "哈希表", "并查集"],
+        "externalLinks": "https://leetcode.cn/problems/longest-consecutive-sequence/",
+        "category": "union-find"
+      },
+      {
+        "id": "contains-duplicate-ii",
+        "title": "219. 存在重复元素 II",
+        "difficulty": "medium",
+        "description": "暂无描述",
+        "tags": [],
+        "externalLinks": "https://leetcode.cn/problems/contains-duplicate-ii/",
+        "category": "hash-table"
+      },
+      {
+        "id": "subarray-sum-equals-k",
+        "title": "560. 和为 K 的子数组",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。",
+        "tags": ["数组", "哈希表", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/subarray-sum-equals-k/",
+        "category": "array"
+      },
+      {
+        "id": "top-k-frequent-elements",
+        "title": "347. 前 K 个高频元素",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。",
+        "tags": ["数组", "哈希表", "堆"],
+        "externalLinks": "https://leetcode.cn/problems/top-k-frequent-elements/",
+        "category": "hash-table"
+      },
+      {
+        "id": "happy-number",
+        "title": "202. 快乐数",
+        "difficulty": "easy",
+        "description": "编写一个算法来判断一个数 n 是不是快乐数。",
+        "tags": ["哈希表", "数学", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/happy-number/",
+        "category": "hash-table"
+      },
+      {
+        "id": "lru-cache",
+        "title": "146. LRU 缓存",
+        "difficulty": "medium",
+        "description": "请你设计并实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。",
+        "tags": ["哈希表", "链表", "设计"],
+        "externalLinks": "https://leetcode.cn/problems/lru-cache/",
+        "category": "hash-table"
+      },
+      {
+        "id": "insert-delete-getrandom-o1",
+        "title": "380. O(1) 时间插入、删除和获取随机元素",
+        "difficulty": "medium",
+        "description": "实现 RandomizedSet 类。确保在 O(1) 时间内完成插入、删除和获取随机元素操作。",
+        "tags": ["数组", "哈希表", "数学", "设计", "随机化"],
+        "externalLinks": "https://leetcode.cn/problems/insert-delete-getrandom-o1/",
+        "category": "hash-table"
+      },
+      {
+        "id": "design-hashset",
+        "title": "705. 设计哈希集合",
+        "difficulty": "easy",
+        "description": "不使用任何内建的哈希表库设计一个哈希集合（HashSet）。",
+        "tags": ["数组", "哈希表", "链表", "设计", "哈希函数"],
+        "externalLinks": "https://leetcode.cn/problems/design-hashset/",
+        "category": "hash-table"
+      },
+      {
+        "id": "design-hashmap",
+        "title": "706. 设计哈希映射",
+        "difficulty": "easy",
+        "description": "不使用任何内建的哈希表库设计一个哈希映射（HashMap）。",
+        "tags": ["数组", "哈希表", "链表", "设计", "哈希函数"],
+        "externalLinks": "https://leetcode.cn/problems/design-hashmap/",
+        "category": "hash-table"
+      }
+    ]
+  }
+]

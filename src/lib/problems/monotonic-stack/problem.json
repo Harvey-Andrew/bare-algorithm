@@ -1,0 +1,140 @@
+[
+  {
+    "id": "stage-1",
+    "title": "第 1 阶段：先把下一个更大元素模型练熟",
+    "description": "从每日温度、下一个更大元素和股票价格跨度入手，理解单调栈为什么能把“向右找第一个满足条件的元素”降到线性。",
+    "problems": [
+      {
+        "id": "daily-temperatures",
+        "title": "739. 每日温度",
+        "difficulty": "medium",
+        "description": "给定一个整数数组 temperatures ，表示每天的温度，返回一个数组 answer ，其中 answer[i] 是指对于第 i 天，下一个更高温度出现在几天后。",
+        "tags": ["栈", "数组", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/daily-temperatures/",
+        "category": "monotonic-stack"
+      },
+      {
+        "id": "next-greater-element-i",
+        "title": "496. 下一个更大元素 I",
+        "difficulty": "easy",
+        "description": "nums1 中数字 x 的 下一个更大元素 是指 x 在 nums2 中对应位置 右侧 的 第一个 比 x 大的元素。",
+        "tags": ["栈", "数组", "哈希表", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/next-greater-element-i/",
+        "category": "monotonic-stack"
+      },
+      {
+        "id": "next-greater-element-ii",
+        "title": "503. 下一个更大元素 II",
+        "difficulty": "medium",
+        "description": "给定一个循环数组 nums （ nums[nums.length - 1] 的下一个元素是 nums[0] ），返回 nums 中每个元素的 下一个更大元素 。",
+        "tags": ["栈", "数组", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/next-greater-element-ii/",
+        "category": "monotonic-stack"
+      },
+      {
+        "id": "online-stock-span",
+        "title": "901. 股票价格跨度",
+        "difficulty": "medium",
+        "description": "设计一个算法收集某些股票的每日报价，并返回该股票当日价格的 跨度 。当日股票价格的 跨度 被定义为股票价格小于或等于今天价格的最大连续日数。",
+        "tags": ["栈", "设计", "数据流", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/online-stock-span/",
+        "category": "monotonic-stack"
+      }
+    ]
+  },
+  {
+    "id": "stage-2",
+    "title": "第 2 阶段：结合贪心和双指针理解结构变化",
+    "description": "这一阶段开始处理删数、去重、接雨水和 132 模式，重点是栈中保存的不是答案，而是未来决策需要的结构信息。",
+    "problems": [
+      {
+        "id": "remove-k-digits",
+        "title": "402. 移掉 K 位数字",
+        "difficulty": "medium",
+        "description": "给你一个以字符串表示的非负整数 num 和一个整数 k ，移除这个数中的 k 位数字，使得剩下的数字最小。请你以字符串形式返回这个最小的数字。",
+        "tags": ["栈", "贪心", "字符串", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/remove-k-digits/",
+        "category": "monotonic-stack"
+      },
+      {
+        "id": "remove-duplicate-letters",
+        "title": "316. 去除重复字母",
+        "difficulty": "medium",
+        "description": "给你一个字符串 s ，请你去除字符串中重复的字母，使得每个字母只出现一次。需保证 返回结果的字典序最小（要求不能打乱其他字符的相对位置）。",
+        "tags": ["栈", "字符串", "贪心", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/remove-duplicate-letters/",
+        "category": "monotonic-stack"
+      },
+      {
+        "id": "trapping-rain-water",
+        "title": "42. 接雨水",
+        "difficulty": "hard",
+        "description": "给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。",
+        "tags": ["数组", "双指针", "动态规划", "栈", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/trapping-rain-water/",
+        "category": "two-pointers"
+      },
+      {
+        "id": "132-pattern",
+        "title": "456. 132 模式",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums，其中 n = nums.length。如果 nums 中存在 132 模式的子序列 ，则返回 true；否则，返回 false。",
+        "tags": ["栈", "数组", "二分查找", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/132-pattern/",
+        "category": "monotonic-stack"
+      }
+    ]
+  },
+  {
+    "id": "stage-3",
+    "title": "第 3 阶段：掌握贡献法与面积类高频题",
+    "description": "最后进入柱状图、子数组最小值之和、区间范围和与最小乘积这类题，核心是把每个元素对答案的贡献拆开计算。",
+    "problems": [
+      {
+        "id": "largest-rectangle-in-histogram",
+        "title": "84. 柱状图中最大的矩形",
+        "difficulty": "hard",
+        "description": "给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。求在该柱状图中，能够勾勒出来的矩形的最大面积。",
+        "tags": ["栈", "数组", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/largest-rectangle-in-histogram/",
+        "category": "monotonic-stack"
+      },
+      {
+        "id": "maximal-rectangle",
+        "title": "85. 最大矩形",
+        "difficulty": "hard",
+        "description": "给定一个仅包含 0 和 1 、大小为 rows x cols 的二维矩阵，找出只包含 1 的最大矩形，并返回其面积。",
+        "tags": ["栈", "数组", "动态规划", "矩阵", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/maximal-rectangle/",
+        "category": "monotonic-stack"
+      },
+      {
+        "id": "sum-of-subarray-minimums",
+        "title": "907. 子数组的最小值之和",
+        "difficulty": "medium",
+        "description": "给定一个整数数组 arr，找到 min(b) 的总和，其中 b 的范围为 arr 的每个（连续）子数组。",
+        "tags": ["栈", "数组", "动态规划", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/sum-of-subarray-minimums/",
+        "category": "monotonic-stack"
+      },
+      {
+        "id": "sum-of-subarray-ranges",
+        "title": "2104. 子数组范围和",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums 。nums 中，子数组的 范围 是子数组中最大元素和最小元素的差值。返回 nums 中 所有 子数组范围的 和 。",
+        "tags": ["栈", "数组", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/sum-of-subarray-ranges/",
+        "category": "monotonic-stack"
+      },
+      {
+        "id": "maximum-subarray-min-product",
+        "title": "1856. 子数组最小乘积的最大值",
+        "difficulty": "medium",
+        "description": "一个数组的 最小乘积 定义为这个数组中 最小值 乘以 数组的 和 。给你一个正整数数组 nums ，请你返回 nums 任意 非空子数组 的最小乘积 的 最大值 。",
+        "tags": ["栈", "数组", "前缀和", "单调栈"],
+        "externalLinks": "https://leetcode.cn/problems/maximum-subarray-min-product/",
+        "category": "monotonic-stack"
+      }
+    ]
+  }
+]

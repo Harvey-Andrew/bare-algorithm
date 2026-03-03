@@ -1,0 +1,131 @@
+[
+  {
+    "id": "stage-1",
+    "title": "第 1 阶段：先把子集、组合、排列写顺",
+    "description": "先练回溯模板最核心的三件事：选与不选、路径记录和撤销选择，把搜索树展开过程彻底看清。",
+    "problems": [
+      {
+        "id": "subsets",
+        "title": "78. 子集",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。",
+        "tags": ["回溯", "位运算"],
+        "externalLinks": "https://leetcode.cn/problems/subsets/",
+        "category": "backtracking"
+      },
+      {
+        "id": "combinations",
+        "title": "77. 组合",
+        "difficulty": "medium",
+        "description": "给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。",
+        "tags": ["回溯"],
+        "externalLinks": "https://leetcode.cn/problems/combinations/",
+        "category": "backtracking"
+      },
+      {
+        "id": "permutations",
+        "title": "46. 全排列",
+        "difficulty": "medium",
+        "description": "给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。",
+        "tags": ["回溯"],
+        "externalLinks": "https://leetcode.cn/problems/permutations/",
+        "category": "backtracking"
+      },
+      {
+        "id": "permutations-ii",
+        "title": "47. 全排列 II",
+        "difficulty": "medium",
+        "description": "给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。",
+        "tags": ["回溯", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/permutations-ii/",
+        "category": "backtracking"
+      }
+    ]
+  },
+  {
+    "id": "stage-2",
+    "title": "第 2 阶段：加入剪枝和目标约束",
+    "description": "这一阶段开始处理组合总和、括号生成和电话号码组合。重点是剪枝条件、起始位置控制和重复分支消除。",
+    "problems": [
+      {
+        "id": "combination-sum",
+        "title": "39. 组合总和",
+        "difficulty": "medium",
+        "description": "给你一个 无重复元素 的整数数组 candidates 和一个目标整数 target ，找出 candidates 中可以使数字和为目标数 target 的 所有 不同组合 ，并以列表形式返回。",
+        "tags": ["回溯", "数组"],
+        "externalLinks": "https://leetcode.cn/problems/combination-sum/",
+        "category": "backtracking"
+      },
+      {
+        "id": "combination-sum-ii",
+        "title": "40. 组合总和 II",
+        "difficulty": "medium",
+        "description": "给定一个候选人编号的集合 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。每个数字在每个组合中只能使用 一次 。",
+        "tags": ["数组", "回溯"],
+        "externalLinks": "https://leetcode.cn/problems/combination-sum-ii/",
+        "category": "backtracking"
+      },
+      {
+        "id": "generate-parentheses",
+        "title": "22. 括号生成",
+        "difficulty": "medium",
+        "description": "数字 n 代表生成括号对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。",
+        "tags": ["字符串", "动态规划", "回溯"],
+        "externalLinks": "https://leetcode.cn/problems/generate-parentheses/",
+        "category": "backtracking"
+      },
+      {
+        "id": "letter-combinations-of-a-phone-number",
+        "title": "17. 电话号码的字母组合",
+        "difficulty": "medium",
+        "description": "给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。答案可以按 任意顺序 返回。",
+        "tags": ["哈希表", "字符串", "回溯"],
+        "externalLinks": "https://leetcode.cn/problems/letter-combinations-of-a-phone-number/",
+        "category": "backtracking"
+      }
+    ]
+  },
+  {
+    "id": "stage-3",
+    "title": "第 3 阶段：攻克字符串切分与棋盘搜索",
+    "description": "最后处理回文划分、复原 IP、单词搜索和 N 皇后，重点是把判定逻辑嵌进搜索，同时控制复杂度和回退时机。",
+    "problems": [
+      {
+        "id": "palindrome-partitioning",
+        "title": "131. 分割回文串",
+        "difficulty": "medium",
+        "description": "给你一个字符串 s，请你将 s 分割成一些子串，使每个子串都是 回文串 。返回 s 所有可能的分割方案。",
+        "tags": ["字符串", "动态规划", "回溯"],
+        "externalLinks": "https://leetcode.cn/problems/palindrome-partitioning/",
+        "category": "backtracking"
+      },
+      {
+        "id": "restore-ip-addresses",
+        "title": "93. 复原 IP 地址",
+        "difficulty": "medium",
+        "description": "有效 IP 地址 正好由四个整数（每个整数位于 0 到 255 之间组成，且不能含有前导 0），整数之间用 '.' 分隔。给定一个只包含数字的字符串 s ，用以表示一个 IP 地址，返回所有可能的有效 IP 地址。",
+        "tags": ["字符串", "回溯"],
+        "externalLinks": "https://leetcode.cn/problems/restore-ip-addresses/",
+        "category": "backtracking"
+      },
+      {
+        "id": "word-search",
+        "title": "79. 单词搜索",
+        "difficulty": "medium",
+        "description": "给定一个 m x n 二维字符网格 board 和一个字符串单词 word 。如果 word 存在于网格中，返回 true ；否则，返回 false 。",
+        "tags": ["数组", "回溯", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/word-search/",
+        "category": "backtracking"
+      },
+      {
+        "id": "n-queens",
+        "title": "51. N 皇后",
+        "difficulty": "hard",
+        "description": "n 皇后问题 研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并且使皇后彼此之间不能相互攻击。",
+        "tags": ["回溯"],
+        "externalLinks": "https://leetcode.cn/problems/n-queens/",
+        "category": "backtracking"
+      }
+    ]
+  }
+]

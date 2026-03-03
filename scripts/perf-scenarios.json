@@ -1,0 +1,28 @@
+{
+  "scenarios": [
+    {
+      "name": "two-sum",
+      "route": "/problems/array/two-sum",
+      "description": "数组 - 两数之和（默认场景）",
+      "interactions": [
+        { "action": "search", "query": "two sum" },
+        { "action": "play-pause" },
+        { "action": "step-forward", "count": 3 },
+        { "action": "reset" },
+        { "action": "scroll", "deltaY": 720 },
+        { "action": "scroll", "deltaY": -420 }
+      ]
+    },
+    {
+      "name": "number-of-islands",
+      "route": "/problems/graph/number-of-islands",
+      "description": "图 - 岛屿数量",
+      "interactions": [
+        { "action": "play-pause" },
+        { "action": "step-forward", "count": 5 },
+        { "action": "scroll", "deltaY": 600 },
+        { "action": "scroll", "deltaY": -300 }
+      ]
+    }
+  ]
+}

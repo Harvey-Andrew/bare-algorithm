@@ -1,0 +1,95 @@
+[
+  {
+    "id": "prefix-basics",
+    "title": "第 1 阶段：先把一维/二维前缀和建模练熟",
+    "description": "先训练“预处理一次，快速回答多次区间查询”的思路。重点是前缀数组定义、边界下标和二维容斥。",
+    "problems": [
+      {
+        "id": "range-sum-query-immutable",
+        "title": "303. 区域和检索 - 数组不可变",
+        "difficulty": "easy",
+        "description": "给定一个整数数组 nums，处理多项查询，其功能是：计算索引 left 和 right（包含 left 和 right）之间的 nums 元素的和。",
+        "tags": ["数组", "设计", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/range-sum-query-immutable/",
+        "category": "prefix-sum"
+      },
+      {
+        "id": "find-pivot-index",
+        "title": "724. 寻找数组的中心下标",
+        "difficulty": "easy",
+        "description": "给你一个整数数组 nums，请计算数组的中心下标。数组中心下标是数组的一个下标，其左侧所有元素相加的和等于右侧所有元素相加的和。",
+        "tags": ["数组", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/find-pivot-index/",
+        "category": "prefix-sum"
+      },
+      {
+        "id": "range-sum-query-2d-immutable",
+        "title": "304. 二维区域和检索 - 矩阵不可变",
+        "difficulty": "medium",
+        "description": "给定一个二维矩阵 matrix，计算其子矩形范围内元素的总和，该子矩阵的左上角为 (row1, col1)，右下角为 (row2, col2)。",
+        "tags": ["数组", "设计", "矩阵", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/range-sum-query-2d-immutable/",
+        "category": "prefix-sum"
+      }
+    ]
+  },
+  {
+    "id": "hash-prefix",
+    "title": "第 2 阶段：掌握前缀和 + 哈希统计子数组",
+    "description": "这一阶段核心是把“区间和条件”改写成“两个前缀状态的关系”，再用哈希表统计历史状态出现次数。",
+    "problems": [
+      {
+        "id": "subarray-sum-equals-k",
+        "title": "560. 和为 K 的子数组",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums 和一个整数 k，请你统计并返回该数组中和为 k 的子数组的个数。",
+        "tags": ["数组", "哈希表", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/subarray-sum-equals-k/",
+        "category": "array"
+      },
+      {
+        "id": "subarray-sums-divisible-by-k",
+        "title": "974. 和可被 K 整除的子数组",
+        "difficulty": "medium",
+        "description": "给定一个整数数组 nums 和一个整数 k，返回其中元素之和可被 k 整除的（连续、非空）子数组的数目。",
+        "tags": ["数组", "哈希表", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/subarray-sums-divisible-by-k/",
+        "category": "prefix-sum"
+      },
+      {
+        "id": "contiguous-array",
+        "title": "525. 连续数组",
+        "difficulty": "medium",
+        "description": "给定一个二进制数组 nums，找到含有相同数量 0 和 1 的最长连续子数组，并返回该子数组的长度。",
+        "tags": ["数组", "哈希表", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/contiguous-array/",
+        "category": "prefix-sum"
+      }
+    ]
+  },
+  {
+    "id": "difference-array",
+    "title": "第 3 阶段：把差分思路用于批量区间更新",
+    "description": "最后学习“先记变化量，再一次性还原结果”的差分思想，重点是区间起点加、终点后减，再配合前缀和恢复每个位置值。",
+    "problems": [
+      {
+        "id": "corporate-flight-bookings",
+        "title": "1109. 航班预订统计",
+        "difficulty": "medium",
+        "description": "这里有 n 个航班，它们分别从 1 到 n 编号。有一份航班预订表 bookings，表中第 i 条记录 bookings[i] = [first_i, last_i, seats_i]，表示在 first_i 到 last_i 的每个航班上预订了 seats_i 个座位。",
+        "tags": ["数组", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/corporate-flight-bookings/",
+        "category": "prefix-sum"
+      },
+      {
+        "id": "car-pooling",
+        "title": "1094. 拼车",
+        "difficulty": "medium",
+        "description": "车上最初有 capacity 个空座位，且车只能向一个方向行驶。给定行程计划 trips，trip[i] = [numPassengers_i, from_i, to_i] 表示第 i 次旅行的上下车区间，判断是否可以完成所有接送。",
+        "tags": ["数组", "排序", "堆", "模拟", "前缀和"],
+        "externalLinks": "https://leetcode.cn/problems/car-pooling/",
+        "category": "prefix-sum"
+      }
+    ]
+  }
+]

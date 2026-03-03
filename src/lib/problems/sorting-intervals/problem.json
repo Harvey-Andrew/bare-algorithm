@@ -1,0 +1,77 @@
+[
+  {
+    "id": "interval-merge-basics",
+    "title": "第 1 阶段：先把区间合并与插入打牢",
+    "description": "先建立区间题的核心流程：按起点排序、维护当前合并段、遇到重叠扩展边界，遇到断开就结算。",
+    "problems": [
+      {
+        "id": "merge-intervals",
+        "title": "56. 合并区间",
+        "difficulty": "medium",
+        "description": "以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi]。请你合并所有重叠的区间，并返回一个不重叠的区间数组。",
+        "tags": ["数组", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/merge-intervals/",
+        "category": "array"
+      },
+      {
+        "id": "insert-interval",
+        "title": "57. 插入区间",
+        "difficulty": "medium",
+        "description": "给你一个无重叠且按区间起始端点排序的区间列表，在列表中插入一个新区间，确保最终区间仍然有序且不重叠。",
+        "tags": ["数组"],
+        "externalLinks": "https://leetcode.cn/problems/insert-interval/",
+        "category": "sorting-intervals"
+      }
+    ]
+  },
+  {
+    "id": "schedule-allocation",
+    "title": "第 2 阶段：掌握会议资源分配与日程冲突检测",
+    "description": "这一阶段把区间问题映射到资源调度。重点是时间线扫描、结束时间最小堆，以及区间冲突判定。",
+    "problems": [
+      {
+        "id": "meeting-rooms-ii",
+        "title": "253. 会议室 II",
+        "difficulty": "medium",
+        "description": "给你一个会议时间安排数组 intervals，每个会议为 [starti, endi]，返回所需会议室的最小数量。",
+        "tags": ["数组", "双指针", "排序", "堆"],
+        "externalLinks": "https://leetcode.cn/problems/meeting-rooms-ii/",
+        "category": "sorting-intervals"
+      },
+      {
+        "id": "my-calendar-i",
+        "title": "729. 我的日程安排表 I",
+        "difficulty": "medium",
+        "description": "实现一个 MyCalendar 类来存放日程安排。如果要添加的日程不会造成重复预订，则可以存储这个新的日程。",
+        "tags": ["设计", "线段树", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/my-calendar-i/",
+        "category": "sorting-intervals"
+      }
+    ]
+  },
+  {
+    "id": "interval-advanced-optimization",
+    "title": "第 3 阶段：攻克区间进阶优化题",
+    "description": "最后处理区间排序 + 二分 + DP/贪心的综合题型，训练状态转移与边界推进的组合能力。",
+    "problems": [
+      {
+        "id": "maximum-profit-in-job-scheduling",
+        "title": "1235. 规划兼职工作",
+        "difficulty": "hard",
+        "description": "你打算利用空闲时间做兼职。共有 n 份工作，每份工作有开始时间 startTime[i]、结束时间 endTime[i] 和报酬 profit[i]，求可获得的最大报酬。",
+        "tags": ["数组", "二分查找", "动态规划", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/maximum-profit-in-job-scheduling/",
+        "category": "sorting-intervals"
+      },
+      {
+        "id": "maximize-area-of-square-hole-in-grid",
+        "title": "2943. 最大化网格图中正方形空洞的面积",
+        "difficulty": "medium",
+        "description": "给你由横线段和竖线段组成的网格图。你可以移除部分线段，返回移除后剩余网格图中最大正方形空洞的面积。",
+        "tags": ["数组", "排序", "贪心"],
+        "externalLinks": "https://leetcode.cn/problems/maximize-area-of-square-hole-in-grid/",
+        "category": "sorting-intervals"
+      }
+    ]
+  }
+]

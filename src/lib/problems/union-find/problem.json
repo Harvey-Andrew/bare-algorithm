@@ -1,0 +1,95 @@
+[
+  {
+    "id": "connectivity-basics",
+    "title": "第 1 阶段：先掌握连通性判定与成环检测",
+    "description": "先把并查集最核心的两个目标练熟：判断两个点是否连通，以及加入新边后是否产生环。",
+    "problems": [
+      {
+        "id": "number-of-provinces",
+        "title": "547. 省份数量",
+        "difficulty": "medium",
+        "description": "有 n 个城市，其中一些彼此相连，另一些没有相连。省份是一组直接或间接相连的城市，返回省份总数。",
+        "tags": ["深度优先搜索", "广度优先搜索", "并查集", "图"],
+        "externalLinks": "https://leetcode.cn/problems/number-of-provinces/",
+        "category": "union-find"
+      },
+      {
+        "id": "redundant-connection",
+        "title": "684. 冗余连接",
+        "difficulty": "medium",
+        "description": "树可以看成是一个连通且无环的无向图。给定往一棵 n 个节点树中添加一条边后的图，找出一条可删去的边，使得结果图重新成为树。",
+        "tags": ["深度优先搜索", "广度优先搜索", "并查集", "图"],
+        "externalLinks": "https://leetcode.cn/problems/redundant-connection/",
+        "category": "union-find"
+      },
+      {
+        "id": "graph-valid-tree",
+        "title": "261. 以图判树",
+        "difficulty": "medium",
+        "description": "给定编号从 0 到 n - 1 的 n 个节点和边列表 edges，判断这些边是否能够形成一棵有效的树。",
+        "tags": ["深度优先搜索", "广度优先搜索", "并查集", "图"],
+        "externalLinks": "https://leetcode.cn/problems/graph-valid-tree/",
+        "category": "union-find"
+      }
+    ]
+  },
+  {
+    "id": "component-grouping",
+    "title": "第 2 阶段：学会按连通分量做分组与约束合并",
+    "description": "这一阶段重点是把对象抽象成节点并按关系连边，再按连通分量聚合信息或校验约束是否冲突。",
+    "problems": [
+      {
+        "id": "accounts-merge",
+        "title": "721. 账户合并",
+        "difficulty": "medium",
+        "description": "给定账户列表 accounts，每个账户含用户名和若干邮箱。若两个账户共享任一邮箱，则视为同一人并进行合并。",
+        "tags": ["数组", "哈希表", "字符串", "深度优先搜索", "广度优先搜索", "并查集"],
+        "externalLinks": "https://leetcode.cn/problems/accounts-merge/",
+        "category": "union-find"
+      },
+      {
+        "id": "smallest-string-with-swaps",
+        "title": "1202. 交换字符串中的元素",
+        "difficulty": "medium",
+        "description": "给你一个字符串 s 和一些可交换索引对 pairs。你可以任意次交换 pairs 中任意一对索引处的字符，返回可得到的字典序最小字符串。",
+        "tags": ["数组", "哈希表", "字符串", "深度优先搜索", "广度优先搜索", "并查集"],
+        "externalLinks": "https://leetcode.cn/problems/smallest-string-with-swaps/",
+        "category": "union-find"
+      },
+      {
+        "id": "satisfiability-of-equality-equations",
+        "title": "990. 等式方程的可满足性",
+        "difficulty": "medium",
+        "description": "给定一组长度为 4 的方程字符串 equations[i]，表示变量间的相等或不等关系，判断是否存在变量赋值使所有方程同时成立。",
+        "tags": ["数组", "字符串", "并查集", "图"],
+        "externalLinks": "https://leetcode.cn/problems/satisfiability-of-equality-equations/",
+        "category": "union-find"
+      }
+    ]
+  },
+  {
+    "id": "union-find-variants",
+    "title": "第 3 阶段：处理网格建模与哈希映射变体",
+    "description": "最后把并查集用于二维网格和非连续值域问题。核心是节点映射方式，以及合并时机和统计口径。",
+    "problems": [
+      {
+        "id": "number-of-islands",
+        "title": "200. 岛屿数量",
+        "difficulty": "medium",
+        "description": "给你一个由 1（陆地）和 0（水）组成的二维网格，请计算网格中岛屿的数量。岛屿只能由水平方向和竖直方向相邻的陆地连接形成。",
+        "tags": ["深度优先搜索", "广度优先搜索", "并查集", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/number-of-islands/",
+        "category": "graph"
+      },
+      {
+        "id": "longest-consecutive-sequence",
+        "title": "128. 最长连续序列",
+        "difficulty": "medium",
+        "description": "给定一个未排序的整数数组 nums，找出数字连续的最长序列长度（不要求在原数组中连续），并实现 O(n) 时间复杂度。",
+        "tags": ["数组", "哈希表", "并查集"],
+        "externalLinks": "https://leetcode.cn/problems/longest-consecutive-sequence/",
+        "category": "union-find"
+      }
+    ]
+  }
+]

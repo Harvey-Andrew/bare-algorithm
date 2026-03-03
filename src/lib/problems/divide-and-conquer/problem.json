@@ -1,0 +1,86 @@
+[
+  {
+    "id": "divide-basics",
+    "title": "第 1 阶段：先把分而治之的递归框架练熟",
+    "description": "先训练“拆子问题-合并答案”的基础流程，重点是递归边界、合并逻辑和时间复杂度拆解。",
+    "problems": [
+      {
+        "id": "sort-an-array",
+        "title": "912. 排序数组",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums，请将其升序排列，可使用归并排序或快速排序实现。",
+        "tags": ["数组", "分治", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/sort-an-array/",
+        "category": "divide-and-conquer"
+      },
+      {
+        "id": "maximum-subarray",
+        "title": "53. 最大子数组和",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums，找出具有最大和的连续子数组并返回其最大和。",
+        "tags": ["数组", "分治", "动态规划"],
+        "externalLinks": "https://leetcode.cn/problems/maximum-subarray/",
+        "category": "array"
+      },
+      {
+        "id": "beautiful-array",
+        "title": "932. 漂亮数组",
+        "difficulty": "medium",
+        "description": "构造长度为 n 的漂亮数组，使任意 i < k < j 都不满足 2*nums[k] == nums[i] + nums[j]。",
+        "tags": ["数组", "数学", "分治"],
+        "externalLinks": "https://leetcode.cn/problems/beautiful-array/",
+        "category": "divide-and-conquer"
+      }
+    ]
+  },
+  {
+    "id": "selection-and-merge",
+    "title": "第 2 阶段：掌握快速选择与多路归并",
+    "description": "这一阶段重点是两类高频模型：按划分定位第 k 大元素，以及在多个有序序列间做高效归并。",
+    "problems": [
+      {
+        "id": "kth-largest-element",
+        "title": "215. 数组中的第 K 个最大元素",
+        "difficulty": "medium",
+        "description": "给定整数数组 nums 和整数 k，返回数组中第 k 个最大的元素。",
+        "tags": ["数组", "分治", "排序", "堆", "快速选择"],
+        "externalLinks": "https://leetcode.cn/problems/kth-largest-element-in-an-array/",
+        "category": "divide-and-conquer"
+      },
+      {
+        "id": "merge-k-sorted-lists",
+        "title": "23. 合并 K 个升序链表",
+        "difficulty": "hard",
+        "description": "给你一个链表数组，每个链表都按升序排列。请将所有链表合并为一个升序链表并返回。",
+        "tags": ["链表", "分治", "堆", "归并排序"],
+        "externalLinks": "https://leetcode.cn/problems/merge-k-sorted-lists/",
+        "category": "divide-and-conquer"
+      }
+    ]
+  },
+  {
+    "id": "divide-hard-problems",
+    "title": "第 3 阶段：攻克分治进阶难题",
+    "description": "最后处理需要“拆分 + 统计”同时进行的题型，训练在递归过程中携带额外信息并正确合并。",
+    "problems": [
+      {
+        "id": "reverse-pairs",
+        "title": "493. 翻转对",
+        "difficulty": "hard",
+        "description": "给定数组 nums，返回重要翻转对的数量，其中 i < j 且 nums[i] > 2 * nums[j]。",
+        "tags": ["数组", "分治", "归并排序"],
+        "externalLinks": "https://leetcode.cn/problems/reverse-pairs/",
+        "category": "divide-and-conquer"
+      },
+      {
+        "id": "different-ways-to-add-parentheses",
+        "title": "241. 为运算表达式设计优先级",
+        "difficulty": "medium",
+        "description": "给你由数字和运算符组成的字符串 expression，返回按不同加括号方式计算得到的所有结果。",
+        "tags": ["数学", "字符串", "动态规划", "递归", "记忆化"],
+        "externalLinks": "https://leetcode.cn/problems/different-ways-to-add-parentheses/",
+        "category": "divide-and-conquer"
+      }
+    ]
+  }
+]

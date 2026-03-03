@@ -1,0 +1,68 @@
+[
+  {
+    "id": "fenwick-segment-basics",
+    "title": "第 1 阶段：先掌握可修改区间和与树状数组基础",
+    "description": "先建立“动态维护前缀信息”的直觉，重点是单点更新、区间查询，以及树状数组下标推进规则。",
+    "problems": [
+      {
+        "id": "range-sum-query-mutable",
+        "title": "307. 区域和检索 - 数组可修改",
+        "difficulty": "medium",
+        "description": "给你一个数组 nums，支持更新某个下标值，并查询任意区间 [left, right] 的和。",
+        "tags": ["数组", "设计", "树状数组", "线段树"],
+        "externalLinks": "https://leetcode.cn/problems/range-sum-query-mutable/",
+        "category": "segment-tree-bit"
+      },
+      {
+        "id": "count-of-smaller-numbers-after-self",
+        "title": "315. 计算右侧小于当前元素的个数",
+        "difficulty": "hard",
+        "description": "给你一个整数数组 nums，返回 counts，其中 counts[i] 表示 nums[i] 右侧小于 nums[i] 的元素数量。",
+        "tags": ["数组", "二分查找", "分治", "树状数组", "线段树", "归并排序"],
+        "externalLinks": "https://leetcode.cn/problems/count-of-smaller-numbers-after-self/",
+        "category": "segment-tree-bit"
+      }
+    ]
+  },
+  {
+    "id": "range-counting",
+    "title": "第 2 阶段：攻克前缀和计数与区间统计进阶",
+    "description": "这一阶段重点是把区间和问题转成前缀状态计数，再结合离散化和树结构完成高效统计。",
+    "problems": [
+      {
+        "id": "count-of-range-sum",
+        "title": "327. 区间和的个数",
+        "difficulty": "hard",
+        "description": "给你一个整数数组 nums 以及两个整数 lower 和 upper，返回区间和落在 [lower, upper] 范围内的子数组个数。",
+        "tags": ["数组", "二分查找", "分治", "树状数组", "线段树", "归并排序"],
+        "externalLinks": "https://leetcode.cn/problems/count-of-range-sum/",
+        "category": "segment-tree-bit"
+      }
+    ]
+  },
+  {
+    "id": "dynamic-interval-system",
+    "title": "第 3 阶段：掌握动态区间系统设计",
+    "description": "最后处理动态开点线段树等工程化模型，核心是稀疏区间维护、覆盖更新与最大重叠统计。",
+    "problems": [
+      {
+        "id": "range-module",
+        "title": "715. Range 模块",
+        "difficulty": "hard",
+        "description": "设计一个区间模块，支持在半开区间上执行添加、删除与查询操作。",
+        "tags": ["设计", "线段树", "有序集合"],
+        "externalLinks": "https://leetcode.cn/problems/range-module/",
+        "category": "segment-tree-bit"
+      },
+      {
+        "id": "my-calendar-iii",
+        "title": "732. 我的日程安排表 III",
+        "difficulty": "hard",
+        "description": "实现日程安排结构，支持多次预订并返回当前最大重叠预订次数。",
+        "tags": ["设计", "线段树", "有序集合"],
+        "externalLinks": "https://leetcode.cn/problems/my-calendar-iii/",
+        "category": "segment-tree-bit"
+      }
+    ]
+  }
+]

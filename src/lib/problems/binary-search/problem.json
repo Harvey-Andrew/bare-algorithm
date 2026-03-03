@@ -1,0 +1,131 @@
+[
+  {
+    "id": "stage-1",
+    "title": "第 1 阶段：先把标准二分和边界查找写稳",
+    "description": "先练基础查找、插入位置、平方根和首尾位置，重点是 while 条件、区间定义和边界收缩时机。",
+    "problems": [
+      {
+        "id": "binary-search-basic",
+        "title": "704. 二分查找",
+        "difficulty": "easy",
+        "description": "给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。",
+        "tags": ["数组", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/binary-search-basic/",
+        "category": "binary-search"
+      },
+      {
+        "id": "search-insert-position",
+        "title": "35. 搜索插入位置",
+        "difficulty": "easy",
+        "description": "给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。",
+        "tags": ["数组", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/search-insert-position/",
+        "category": "binary-search"
+      },
+      {
+        "id": "sqrtx",
+        "title": "69. x 的平方根",
+        "difficulty": "easy",
+        "description": "给你一个非负整数 x ，计算并返回 x 的 算术平方根 。由于返回类型是整数，结果只保留 整数部分 ，小数部分将被 舍去 。",
+        "tags": ["数学", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/sqrtx/",
+        "category": "binary-search"
+      },
+      {
+        "id": "find-first-and-last-position-of-element-in-sorted-array",
+        "title": "34. 在排序数组中查找元素的第一个和最后一个位置",
+        "difficulty": "medium",
+        "description": "给你一个按照非递减顺序排列的整数数组 nums，和一个目标值 target。请你找出给定目标值在数组中的开始位置和结束位置。",
+        "tags": ["数组", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/",
+        "category": "binary-search"
+      },
+      {
+        "id": "merge-two-binary-trees",
+        "title": "617. 合并二叉树",
+        "difficulty": "easy",
+        "description": "给你两棵二叉树： root1 和 root2 。想象一下，当你将其中一棵覆盖到另一棵之上时，两棵树上的一些节点将会重叠（而另一些不会）。你需要将这两棵树合并成一棵新二叉树。合并的规则是：如果两个节点重叠，那么将这两个节点的值相加作为合并后节点的新值；否则，不为 null 的节点将直接作为新二叉树的节点。返回合并后的二叉树。",
+        "tags": ["树", "深度优先搜索", "广度优先搜索", "二叉树"],
+        "externalLinks": "https://leetcode.cn/problems/merge-two-binary-trees/",
+        "category": "binary-search"
+      }
+    ]
+  },
+  {
+    "id": "stage-2",
+    "title": "第 2 阶段：处理旋转数组与矩阵变形",
+    "description": "这一阶段开始在旋转数组、峰值和二维矩阵里找有序性，学会先判断哪一段仍然有序，再决定往哪边缩。",
+    "problems": [
+      {
+        "id": "search-in-rotated-sorted-array",
+        "title": "33. 搜索旋转排序数组",
+        "difficulty": "medium",
+        "description": "整数数组 nums 按升序排列，数组中的值互不相同。在传递给函数之前，nums 在预先未知的某个下标 k（0 <= k < nums.length）上进行了 旋转。",
+        "tags": ["数组", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/search-in-rotated-sorted-array/",
+        "category": "binary-search"
+      },
+      {
+        "id": "find-minimum-in-rotated-sorted-array",
+        "title": "153. 寻找旋转排序数组中的最小值",
+        "difficulty": "medium",
+        "description": "已知一个长度为 n 的数组，预先按照升序排列，经由 1 到 n 次 旋转 后，得到输入数组。请你找出并返回数组中的 最小元素 。",
+        "tags": ["数组", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/",
+        "category": "binary-search"
+      },
+      {
+        "id": "find-peak-element",
+        "title": "162. 寻找峰值",
+        "difficulty": "medium",
+        "description": "峰值元素是指其值严格大于左右相邻值的元素。给你一个整数数组 nums，找到峰值元素并返回其索引。",
+        "tags": ["数组", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/find-peak-element/",
+        "category": "binary-search"
+      },
+      {
+        "id": "search-a-2d-matrix",
+        "title": "74. 搜索二维矩阵",
+        "difficulty": "medium",
+        "description": "给你一个满足下述两条属性的 m x n 整数矩阵：每行中的整数从左到右按非严格递增顺序排列；每行的第一个整数大于前一行的最后一个整数。给你一个整数 target，如果 target 在矩阵中，返回 true；否则，返回 false。",
+        "tags": ["数组", "二分查找", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/search-a-2d-matrix/",
+        "category": "binary-search"
+      }
+    ]
+  },
+  {
+    "id": "stage-3",
+    "title": "第 3 阶段：掌握答案二分与分割型难题",
+    "description": "最后进入吃香蕉、运包裹和两个有序数组中位数，重点不再是找目标，而是二分“可行答案空间”或分割位置。",
+    "problems": [
+      {
+        "id": "koko-eating-bananas",
+        "title": "875. 爱吃香蕉的珂珂",
+        "difficulty": "medium",
+        "description": "珂珂喜欢吃香蕉。这里有 n 堆香蕉，第 i 堆中有 piles[i] 根香蕉。警卫已经离开了，将在 h 小时后回来。珂珂可以决定她吃香蕉的速度 k （单位：根/小时）。",
+        "tags": ["数组", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/koko-eating-bananas/",
+        "category": "binary-search"
+      },
+      {
+        "id": "capacity-to-ship-packages-within-d-days",
+        "title": "1011. 在 D 天内送达包裹的能力",
+        "difficulty": "medium",
+        "description": "传送带上的包裹必须在 days 天内从一个港口运送到另一个港口。给出包裹的重量 weights 和天数 days，返回能在 days 天内将传送带上的所有包裹送达的船的最低载重能力。",
+        "tags": ["数组", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/capacity-to-ship-packages-within-d-days/",
+        "category": "binary-search"
+      },
+      {
+        "id": "median-of-two-sorted-arrays",
+        "title": "4. 寻找两个正序数组的中位数",
+        "difficulty": "hard",
+        "description": "给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。算法的时间复杂度应该为 O(log (m+n))。",
+        "tags": ["数组", "二分查找", "分治"],
+        "externalLinks": "https://leetcode.cn/problems/median-of-two-sorted-arrays/",
+        "category": "binary-search"
+      }
+    ]
+  }
+]

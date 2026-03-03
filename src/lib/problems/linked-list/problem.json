@@ -1,0 +1,183 @@
+[
+  {
+    "id": "pointer-basics",
+    "title": "第 1 阶段：先把指针操作练顺手",
+    "description": "先掌握链表最基础的遍历、删除、定位和拼接。重点不是背模板，而是清楚每一步谁断开、谁接上。",
+    "problems": [
+      {
+        "id": "reverse-linked-list",
+        "title": "206. 反转链表",
+        "difficulty": "easy",
+        "description": "给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。",
+        "tags": ["链表", "递归"],
+        "externalLinks": "https://leetcode.cn/problems/reverse-linked-list/",
+        "category": "linked-list"
+      },
+      {
+        "id": "remove-linked-list-elements",
+        "title": "203. 移除链表元素",
+        "difficulty": "easy",
+        "description": "给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。",
+        "tags": ["递归", "链表"],
+        "externalLinks": "https://leetcode.cn/problems/remove-linked-list-elements/",
+        "category": "linked-list"
+      },
+      {
+        "id": "middle-of-the-linked-list",
+        "title": "876. 链表的中间结点",
+        "difficulty": "easy",
+        "description": "给你单链表的头结点 head ，请你找出并返回链表的中间结点。如果有两个中间结点，则返回第二个中间结点。",
+        "tags": ["链表", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/middle-of-the-linked-list/",
+        "category": "linked-list"
+      },
+      {
+        "id": "delete-node-in-a-linked-list",
+        "title": "237. 删除链表中的节点",
+        "difficulty": "medium",
+        "description": "有一个单链表的 head，我们想删除它其中的一个节点 node。给你一个需要删除的节点 node 。你将无法访问第一个节点 head。链表的所有值都是唯一的，并且保证给定的节点 node 不是链表中的最后一个节点。",
+        "tags": ["链表"],
+        "externalLinks": "https://leetcode.cn/problems/delete-node-in-a-linked-list/",
+        "category": "linked-list"
+      },
+      {
+        "id": "merge-two-sorted-lists",
+        "title": "21. 合并两个有序链表",
+        "difficulty": "easy",
+        "description": "将两个升序链表合并为一个新的升序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。",
+        "tags": ["链表", "递归"],
+        "externalLinks": "https://leetcode.cn/problems/merge-two-sorted-lists/",
+        "category": "linked-list"
+      }
+    ]
+  },
+  {
+    "id": "dummy-and-rewiring",
+    "title": "第 2 阶段：用 Dummy Node 和双指针处理局部重排",
+    "description": "这一阶段开始高频出现虚拟头节点、前后指针和局部翻转。目标是把“删一个、插一个、翻一段”这些操作做稳定。",
+    "problems": [
+      {
+        "id": "remove-nth-node-from-end-of-list",
+        "title": "19. 删除链表的倒数第 N 个结点",
+        "difficulty": "medium",
+        "description": "给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。",
+        "tags": ["链表", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/remove-nth-node-from-end-of-list/",
+        "category": "linked-list"
+      },
+      {
+        "id": "swap-nodes-in-pairs",
+        "title": "24. 两两交换链表中的节点",
+        "difficulty": "medium",
+        "description": "给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。",
+        "tags": ["链表", "递归"],
+        "externalLinks": "https://leetcode.cn/problems/swap-nodes-in-pairs/",
+        "category": "linked-list"
+      },
+      {
+        "id": "reverse-linked-list-ii",
+        "title": "92. 反转链表 II",
+        "difficulty": "medium",
+        "description": "给你单链表的头指针 head 和两个整数 left 和 right，其中 left <= right。请你反转从位置 left 到位置 right 的链表节点，返回反转后的链表。",
+        "tags": ["链表"],
+        "externalLinks": "https://leetcode.cn/problems/reverse-linked-list-ii/",
+        "category": "linked-list"
+      },
+      {
+        "id": "palindrome-linked-list",
+        "title": "234. 回文链表",
+        "difficulty": "easy",
+        "description": "给你一个单链表的头节点 head，请你判断该链表是否为回文链表。如果是，返回 true；否则，返回 false。",
+        "tags": ["链表", "双指针", "栈", "递归"],
+        "externalLinks": "https://leetcode.cn/problems/palindrome-linked-list/",
+        "category": "linked-list"
+      },
+      {
+        "id": "intersection-of-two-linked-lists",
+        "title": "160. 相交链表",
+        "difficulty": "easy",
+        "description": "给你两个单链表的头节点 headA 和 headB，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null。",
+        "tags": ["哈希表", "链表", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/intersection-of-two-linked-lists/",
+        "category": "linked-list"
+      }
+    ]
+  },
+  {
+    "id": "structure-detection",
+    "title": "第 3 阶段：识别链表结构并处理多指针协作",
+    "description": "从这里开始，不再只是改指针，而是要读懂链表整体结构。你会系统掌握快慢指针、相遇模型和带额外指针的节点复制。",
+    "problems": [
+      {
+        "id": "add-two-numbers",
+        "title": "2. 两数相加",
+        "difficulty": "medium",
+        "description": "给你两个非空的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。请你将两个数相加，并以相同形式返回一个表示和的链表。",
+        "tags": ["链表", "数学", "递归"],
+        "externalLinks": "https://leetcode.cn/problems/add-two-numbers/",
+        "category": "linked-list"
+      },
+      {
+        "id": "linked-list-cycle",
+        "title": "141. 环形链表",
+        "difficulty": "easy",
+        "description": "给你一个链表的头节点 head，判断链表中是否有环。",
+        "tags": ["链表", "双指针", "哈希表"],
+        "externalLinks": "https://leetcode.cn/problems/linked-list-cycle/",
+        "category": "linked-list"
+      },
+      {
+        "id": "linked-list-cycle-ii",
+        "title": "142. 环形链表 II",
+        "difficulty": "medium",
+        "description": "给定一个链表的头节点 head，返回链表开始入环的第一个节点。如果链表无环，则返回 null。",
+        "tags": ["链表", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/linked-list-cycle-ii/",
+        "category": "linked-list"
+      },
+      {
+        "id": "copy-list-with-random-pointer",
+        "title": "138. 随机链表的复制",
+        "difficulty": "medium",
+        "description": "给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random，该指针可以指向链表中的任何节点或空节点。构造这个链表的深拷贝。",
+        "tags": ["哈希表", "链表"],
+        "externalLinks": "https://leetcode.cn/problems/copy-list-with-random-pointer/",
+        "category": "linked-list"
+      }
+    ]
+  },
+  {
+    "id": "advanced-transforms",
+    "title": "第 4 阶段：攻克复杂变换与工程设计题",
+    "description": "最后处理链表里的综合题：分治排序、分组翻转，以及哈希表加双向链表的经典设计题。这一阶段更看重抽象能力和边界控制。",
+    "problems": [
+      {
+        "id": "sort-list",
+        "title": "148. 排序链表",
+        "difficulty": "medium",
+        "description": "给你链表的头结点 head，请将其按升序排列并返回排序后的链表。",
+        "tags": ["链表", "双指针", "分治", "排序", "归并排序"],
+        "externalLinks": "https://leetcode.cn/problems/sort-list/",
+        "category": "linked-list"
+      },
+      {
+        "id": "reverse-nodes-in-k-group",
+        "title": "25. K 个一组翻转链表",
+        "difficulty": "hard",
+        "description": "给你链表的头节点 head，每 k 个节点一组进行翻转，请你返回修改后的链表。k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是 k 的整数倍，那么请将最后剩余的节点保持原有顺序。",
+        "tags": ["链表", "递归"],
+        "externalLinks": "https://leetcode.cn/problems/reverse-nodes-in-k-group/",
+        "category": "linked-list"
+      },
+      {
+        "id": "lru-cache",
+        "title": "146. LRU 缓存",
+        "difficulty": "medium",
+        "description": "请你设计并实现一个满足 LRU（最近最少使用）缓存约束的数据结构。",
+        "tags": ["哈希表", "链表", "设计", "双向链表"],
+        "externalLinks": "https://leetcode.cn/problems/lru-cache/",
+        "category": "hash-table"
+      }
+    ]
+  }
+]

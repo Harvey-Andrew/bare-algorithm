@@ -1,0 +1,131 @@
+[
+  {
+    "id": "stage-1",
+    "title": "第 1 阶段：相向双指针与首尾对撞",
+    "description": "先掌握从两端向中间逼近的基本模型，理解什么时候该移动左指针、什么时候该移动右指针。",
+    "problems": [
+      {
+        "id": "valid-palindrome",
+        "title": "125. 验证回文串",
+        "difficulty": "easy",
+        "description": "如果在将所有大写字符转换为小写字符、并移除所有非字母数字字符之后，短语正着读和反着读都一样。则可以认为该短语是一个 回文串 。",
+        "tags": ["双指针", "字符串"],
+        "externalLinks": "https://leetcode.cn/problems/valid-palindrome/",
+        "category": "string"
+      },
+      {
+        "id": "container-with-most-water",
+        "title": "11. 盛最多水的容器",
+        "difficulty": "medium",
+        "description": "给定一个长度为 n 的整数数组 height 。有 n 条垂线，第 i 条线的两个端点是 (i, 0) 和 (i, height[i]) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。",
+        "tags": ["数组", "双指针", "贪心"],
+        "externalLinks": "https://leetcode.cn/problems/container-with-most-water/",
+        "category": "two-pointers"
+      },
+      {
+        "id": "two-sum-ii-input-array-is-sorted",
+        "title": "167. 两数之和 II - 输入有序数组",
+        "difficulty": "medium",
+        "description": "给你一个下标从 1 开始的整数数组 numbers ，该数组已按 非递减顺序排列  ，请你从数组中找出满足相加之和等于目标数 target 的两个数。",
+        "tags": ["数组", "双指针", "二分查找"],
+        "externalLinks": "https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/",
+        "category": "two-pointers"
+      },
+      {
+        "id": "squares-of-a-sorted-array",
+        "title": "977. 有序数组的平方",
+        "difficulty": "easy",
+        "description": "给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。",
+        "tags": ["数组", "双指针", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/squares-of-a-sorted-array/",
+        "category": "two-pointers"
+      },
+      {
+        "id": "backspace-string-compare",
+        "title": "844. 比较含退格的字符串",
+        "difficulty": "easy",
+        "description": "给定 s 和 t 两个字符串，当它们分别被输入到空白的文本编辑器后，如果两者相等，返回 true 。# 代表退格字符。",
+        "tags": ["双指针", "栈", "字符串"],
+        "externalLinks": "https://leetcode.cn/problems/backspace-string-compare/",
+        "category": "two-pointers"
+      }
+    ]
+  },
+  {
+    "id": "stage-2",
+    "title": "第 2 阶段：同向快慢指针与原地覆盖",
+    "description": "这一阶段重点练习同向双指针、快慢指针和原地写回，把数组覆盖、去重和稳定移动这些操作练熟。",
+    "problems": [
+      {
+        "id": "remove-duplicates-from-sorted-array",
+        "title": "26. 删除有序数组中的重复项",
+        "difficulty": "easy",
+        "description": "给你一个 非严格递增排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。",
+        "tags": ["数组", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/remove-duplicates-from-sorted-array/",
+        "category": "two-pointers"
+      },
+      {
+        "id": "move-zeroes",
+        "title": "283. 移动零",
+        "difficulty": "easy",
+        "description": "给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。",
+        "tags": ["数组", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/move-zeroes/",
+        "category": "array"
+      },
+      {
+        "id": "remove-element",
+        "title": "27. 移除元素",
+        "difficulty": "easy",
+        "description": "给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。",
+        "tags": ["数组", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/remove-element/",
+        "category": "two-pointers"
+      },
+      {
+        "id": "remove-duplicates-from-sorted-array-ii",
+        "title": "80. 删除有序数组中的重复项 II",
+        "difficulty": "medium",
+        "description": "给你一个有序数组 nums ，请你 原地 删除重复出现的元素，使得出现次数超过两次的元素只出现两次 ，返回删除后数组的新长度。",
+        "tags": ["数组", "双指针"],
+        "externalLinks": "https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii/",
+        "category": "two-pointers"
+      },
+      {
+        "id": "sort-colors",
+        "title": "75. 颜色分类",
+        "difficulty": "medium",
+        "description": "给定一个包含红色、白色和蓝色、共 n 个元素的数组 nums ，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。",
+        "tags": ["数组", "双指针", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/sort-colors/",
+        "category": "two-pointers"
+      }
+    ]
+  },
+  {
+    "id": "stage-3",
+    "title": "第 3 阶段：多重指针协作与复杂区间",
+    "description": "最后处理需要多根指针配合推进的题目，重点理解排序后的夹逼、多状态更新，以及区间边界是如何被同步维护的。",
+    "problems": [
+      {
+        "id": "3sum",
+        "title": "15. 三数之和",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i != j、i != k 且 j != k ，同时还满足 nums[i] + nums[j] + nums[k] == 0 。",
+        "tags": ["数组", "双指针", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/3sum/",
+        "category": "two-pointers"
+      },
+      {
+        "id": "trapping-rain-water",
+        "title": "42. 接雨水",
+        "difficulty": "hard",
+        "description": "给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。",
+        "tags": ["数组", "双指针", "动态规划", "栈"],
+        "externalLinks": "https://leetcode.cn/problems/trapping-rain-water/",
+        "category": "two-pointers"
+      }
+    ]
+  }
+]

@@ -1,0 +1,7 @@
+# Default owners for all files
+* @Harvey-Andrew
+
+# Optional path-level ownership
+/docs/ @Harvey-Andrew
+/scripts/ @Harvey-Andrew
+/src/ @Harvey-Andrew

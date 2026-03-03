@@ -1,0 +1,113 @@
+[
+  {
+    "id": "stage-1",
+    "title": "第 1 阶段：先把图遍历和网格搜索练熟",
+    "description": "从岛屿数量、克隆图、腐烂的橘子和二进制矩阵最短路开始，先把 BFS、DFS 和 visited 的基本套路打稳。",
+    "problems": [
+      {
+        "id": "number-of-islands",
+        "title": "200. 岛屿数量",
+        "difficulty": "medium",
+        "description": "给你一个由 '1'（陆地）和 '0'（水）组成的的二维网格，请你计算网格中岛屿的数量。",
+        "tags": ["数组", "深度优先搜索", "广度优先搜索", "并查集", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/number-of-islands/",
+        "category": "graph"
+      },
+      {
+        "id": "clone-graph",
+        "title": "133. 克隆图",
+        "difficulty": "medium",
+        "description": "给你无向 连通 图中一个节点的引用，请你返回该图的 深拷贝（克隆）。图中的每个节点都包含它的值 val（int） 和其邻居的列表（list[Node]）。",
+        "tags": ["哈希表", "深度优先搜索", "广度优先搜索", "图"],
+        "externalLinks": "https://leetcode.cn/problems/clone-graph/",
+        "category": "graph"
+      },
+      {
+        "id": "rotting-oranges",
+        "title": "994. 腐烂的橘子",
+        "difficulty": "medium",
+        "description": "在给定的 m x n 网格 grid 中，每个单元格可以有以下三个值之一：值 0 代表空单元格；值 1 代表新鲜橘子；值 2 代表腐烂橘子。每分钟，腐烂的橘子周围 4 个方向上相邻的新鲜橘子都会腐烂。",
+        "tags": ["数组", "广度优先搜索", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/rotting-oranges/",
+        "category": "graph"
+      },
+      {
+        "id": "shortest-path-in-binary-matrix",
+        "title": "1091. 二进制矩阵中的最短路径",
+        "difficulty": "medium",
+        "description": "给你一个 n x n 的二进制矩阵 grid 中，返回矩阵中最短 畅通路径 的长度。如果不存在这样的路径，返回 -1 。",
+        "tags": ["数组", "广度优先搜索", "矩阵"],
+        "externalLinks": "https://leetcode.cn/problems/shortest-path-in-binary-matrix/",
+        "category": "graph"
+      }
+    ]
+  },
+  {
+    "id": "stage-2",
+    "title": "第 2 阶段：理解拓扑排序与连通性判断",
+    "description": "这一阶段围绕有向图拓扑排序、二分图染色和并查集展开，重点是把“依赖关系”和“集合归并”抽象清楚。",
+    "problems": [
+      {
+        "id": "course-schedule",
+        "title": "207. 课程表",
+        "difficulty": "medium",
+        "description": "你这个学期必须选修 numCourses 门课程，记为 0 到 numCourses - 1 。在选修某些课程之前需要一些先修课程。请你判断是否可能完成所有课程的学习。",
+        "tags": ["图", "深度优先搜索", "广度优先搜索", "拓扑排序"],
+        "externalLinks": "https://leetcode.cn/problems/course-schedule/",
+        "category": "graph"
+      },
+      {
+        "id": "course-schedule-ii",
+        "title": "210. 课程表 II",
+        "difficulty": "medium",
+        "description": "现在你总共有 numCourses 门课需要选，记为 0 到 numCourses - 1。给你一个数组 prerequisites ，其中 prerequisites[i] = [ai, bi] ，表示在选修课程 ai 前 必须 先选修 bi 。返回你为了学完所有课程所安排的学习顺序。",
+        "tags": ["图", "深度优先搜索", "广度优先搜索", "拓扑排序"],
+        "externalLinks": "https://leetcode.cn/problems/course-schedule-ii/",
+        "category": "graph"
+      },
+      {
+        "id": "is-graph-bipartite",
+        "title": "785. 判断二分图",
+        "difficulty": "medium",
+        "description": "存在一个 无向图 ，图中有 n 个节点。其中每个节点都有一个介于 0 到 n - 1 之间的唯一编号。判断该图是否是二分图。",
+        "tags": ["深度优先搜索", "广度优先搜索", "并查集", "图"],
+        "externalLinks": "https://leetcode.cn/problems/is-graph-bipartite/",
+        "category": "graph"
+      }
+    ]
+  },
+  {
+    "id": "stage-3",
+    "title": "第 3 阶段：进入带权图与最优化问题",
+    "description": "最后处理网络延迟、等式求值和最小生成树，训练最短路、建图抽象以及按边权做全局最优选择。",
+    "problems": [
+      {
+        "id": "network-delay-time",
+        "title": "743. 网络延迟时间",
+        "difficulty": "medium",
+        "description": "有 n 个网络节点，标记为 1 到 n。给你一个列表 times，表示信号经过 有向 边的传递时间。现在，从某个节点 K 发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回 -1 。",
+        "tags": ["深度优先搜索", "广度优先搜索", "图", "堆", "最短路"],
+        "externalLinks": "https://leetcode.cn/problems/network-delay-time/",
+        "category": "graph"
+      },
+      {
+        "id": "evaluate-division",
+        "title": "399. 除法求值",
+        "difficulty": "medium",
+        "description": "给你一个变量对数组 equations 和一个实数值数组 values 作为已知条件。请你根据已知条件，计算并返回查询 queries 的答案。",
+        "tags": ["深度优先搜索", "广度优先搜索", "并查集", "图", "最短路"],
+        "externalLinks": "https://leetcode.cn/problems/evaluate-division/",
+        "category": "graph"
+      },
+      {
+        "id": "min-cost-to-connect-all-points",
+        "title": "1584. 连接所有点的最小费用",
+        "difficulty": "medium",
+        "description": "给你一个points 数组，表示 2D 平面上的一些点，其中 points[i] = [xi, yi] 。连接点 [xi, yi] 和点 [xj, yj] 的费用为它们之间的 曼哈顿距离 。返回连接所有点的最小费用。",
+        "tags": ["数组", "并查集", "图", "最小生成树"],
+        "externalLinks": "https://leetcode.cn/problems/min-cost-to-connect-all-points/",
+        "category": "graph"
+      }
+    ]
+  }
+]

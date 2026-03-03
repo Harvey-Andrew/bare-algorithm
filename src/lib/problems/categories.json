@@ -1,0 +1,140 @@
+[
+  {
+    "id": "leetcode-hot-100",
+    "title": "LeetCode 热题 100",
+    "description": "精选算法与数据结构百道高频面试题。",
+    "icon": "Flame"
+  },
+  {
+    "id": "array",
+    "title": "数组",
+    "description": "线性扫描、区间前缀和及原地哈希。",
+    "icon": "Layers"
+  },
+  {
+    "id": "linked-list",
+    "title": "链表",
+    "description": "指针遍历、局部重排及复杂结构变换。",
+    "icon": "Link"
+  },
+  {
+    "id": "hash-table",
+    "title": "哈希表",
+    "description": "哈希词频统计、集合交集及原地哈希。",
+    "icon": "Hash"
+  },
+  {
+    "id": "string",
+    "title": "字符串",
+    "description": "字符操作、回文、串匹配及KMP算法。",
+    "icon": "Type"
+  },
+  {
+    "id": "two-pointers",
+    "title": "双指针法",
+    "description": "对撞指针、快慢指针及滑动窗口。",
+    "icon": "ArrowLeftRight"
+  },
+  {
+    "id": "stack-queue",
+    "title": "栈与队列",
+    "description": "栈与队列模拟、表达式解析及双端队列。",
+    "icon": "Layers3"
+  },
+  {
+    "id": "binary-tree",
+    "title": "二叉树",
+    "description": "二叉树遍历、BST构造及最近公共祖先。",
+    "icon": "GitBranch"
+  },
+  {
+    "id": "backtracking",
+    "title": "回溯算法",
+    "description": "全排列、网格子集搜索、剪枝及N皇后。",
+    "icon": "RotateCcw"
+  },
+  {
+    "id": "greedy",
+    "title": "贪心算法",
+    "description": "局部最优推导、区间覆盖及分配策略。",
+    "icon": "TrendingUp"
+  },
+  {
+    "id": "dynamic-programming",
+    "title": "动态规划",
+    "description": "状态转移、背包问题及复杂状态压缩。",
+    "icon": "Grid3x3"
+  },
+  {
+    "id": "monotonic-stack",
+    "title": "单调栈",
+    "description": "单调极值统计、接雨水及矩阵最大面积。",
+    "icon": "BarChart3"
+  },
+  {
+    "id": "graph",
+    "title": "图论",
+    "description": "图论基础遍历、拓扑排序及最短路径。",
+    "icon": "Share2"
+  },
+  {
+    "id": "binary-search",
+    "title": "二分查找",
+    "description": "基础查找、旋转矩阵及答案二分求值。",
+    "icon": "Search"
+  },
+  {
+    "id": "heap-priority-queue",
+    "title": "堆与优先队列",
+    "description": "最值排查、TopK提取及多路数据合并。",
+    "icon": "ListFilter"
+  },
+  {
+    "id": "prefix-sum",
+    "title": "前缀和与差分",
+    "description": "一二维前缀和、差分数组及树上前缀和。",
+    "icon": "Calculator"
+  },
+  {
+    "id": "bit-manipulation",
+    "title": "位运算",
+    "description": "按位操作、异或特性及状态压缩枚举。",
+    "icon": "Cpu"
+  },
+  {
+    "id": "sorting-intervals",
+    "title": "排序与区间",
+    "description": "区间交集合并、日程插入及扫描线最值。",
+    "icon": "ArrowUpDown"
+  },
+  {
+    "id": "union-find",
+    "title": "并查集",
+    "description": "基础连通分量、冗余连接及带权并查集。",
+    "icon": "Network"
+  },
+  {
+    "id": "trie",
+    "title": "Trie（字典树）",
+    "description": "前缀匹配、网格字典搜索及异或值优化。",
+    "icon": "FolderTree"
+  },
+  {
+    "id": "segment-tree-bit",
+    "title": "线段树与树状数组",
+    "description": "单点与区间查询、线段树修改及离散化。",
+    "icon": "ChartLine"
+  },
+  {
+    "id": "divide-and-conquer",
+    "title": "分治",
+    "description": "归并拆解、快速选择及分治高频逆序对。",
+    "icon": "Split"
+  },
+  {
+    "id": "math-number-theory",
+    "title": "数学与数论",
+    "description": "质数公约数、快速模运算及容斥原理。",
+    "icon": "Sigma"
+  }
+]

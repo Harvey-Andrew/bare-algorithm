@@ -1,0 +1,149 @@
+[
+  {
+    "id": "stage-1",
+    "title": "第 1 阶段：先建立局部最优的直觉",
+    "description": "从分发饼干、柠檬水找零、股票 II 和跳跃游戏开始，先体会“当前怎么选最不吃亏”。",
+    "problems": [
+      {
+        "id": "assign-cookies",
+        "title": "455. 分发饼干",
+        "difficulty": "medium",
+        "description": "暂无描述",
+        "tags": [],
+        "externalLinks": "https://leetcode.cn/problems/assign-cookies/",
+        "category": "greedy"
+      },
+      {
+        "id": "lemonade-change",
+        "title": "860. 柠檬水找零",
+        "difficulty": "easy",
+        "description": "在柠檬水摊上，每一杯柠檬水的售价为 5 美元。顾客排队购买你的产品，（按账单 bills 支付的顺序）一次购买一杯。",
+        "tags": ["数组", "贪心"],
+        "externalLinks": "https://leetcode.cn/problems/lemonade-change/",
+        "category": "greedy"
+      },
+      {
+        "id": "best-time-to-buy-and-sell-stock-ii",
+        "title": "122. 买卖股票的最佳时机 II",
+        "difficulty": "medium",
+        "description": "给你一个整数数组 prices ，其中 prices[i] 表示某支股票第 i 天的价格。在每一天，你可以决定是否购买和/或出售股票。你也可以先购买，然后在 同一天 出售。",
+        "tags": ["数组", "动态规划", "贪心"],
+        "externalLinks": "https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/",
+        "category": "greedy"
+      },
+      {
+        "id": "jump-game",
+        "title": "55. 跳跃游戏",
+        "difficulty": "medium",
+        "description": "给你一个非负整数数组 nums ，你最初位于数组的 第一个下标 。数组中的每个元素代表你在该位置可以跳跃的最大长度。 判断你是否能够到达最后一个下标。",
+        "tags": ["数组", "动态规划", "贪心"],
+        "externalLinks": "https://leetcode.cn/problems/jump-game/",
+        "category": "greedy"
+      },
+      {
+        "id": "wiggle-subsequence",
+        "title": "376. 摆动序列",
+        "difficulty": "medium",
+        "description": "暂无描述",
+        "tags": [],
+        "externalLinks": "https://leetcode.cn/problems/wiggle-subsequence/",
+        "category": "greedy"
+      }
+    ]
+  },
+  {
+    "id": "stage-2",
+    "title": "第 2 阶段：处理区间排序和双指针贪心",
+    "description": "这一阶段会高频出现排序后决策、区间合并思路和从两端收缩的选择策略。",
+    "problems": [
+      {
+        "id": "non-overlapping-intervals",
+        "title": "435. 无重叠区间",
+        "difficulty": "medium",
+        "description": "给定一个区间的集合 intervals ，其中 intervals[i] = [starti, endi] 。返回 需要移除区间的最小数量，使剩余区间互不重叠 。",
+        "tags": ["数组", "动态规划", "贪心", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/non-overlapping-intervals/",
+        "category": "greedy"
+      },
+      {
+        "id": "minimum-number-of-arrows-to-burst-balloons",
+        "title": "452. 用最少数量的箭引爆气球",
+        "difficulty": "medium",
+        "description": "有一些球形气球贴在一堵用 XY 平面表示的墙面上。墙面上的气球记录在整数数组 points 。一支弓箭可以沿着 x 轴从不同点完全垂直地射出。",
+        "tags": ["数组", "贪心", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons/",
+        "category": "greedy"
+      },
+      {
+        "id": "queue-reconstruction-by-height",
+        "title": "406. 根据身高重建队列",
+        "difficulty": "medium",
+        "description": "假设有打乱顺序的一群人站成一个队列，数组 people 表示队列中一些人的属性（不一定按顺序）。",
+        "tags": ["数组", "贪心", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/queue-reconstruction-by-height/",
+        "category": "greedy"
+      },
+      {
+        "id": "boats-to-save-people",
+        "title": "881. 救生艇",
+        "difficulty": "medium",
+        "description": "给定数组 people 。people[i]表示第 i 个人的体重 ，船的数量不限，每艘船可以承载的最大重量为 limit。",
+        "tags": ["数组", "双指针", "贪心", "排序"],
+        "externalLinks": "https://leetcode.cn/problems/boats-to-save-people/",
+        "category": "greedy"
+      },
+      {
+        "id": "partition-labels",
+        "title": "763. 划分字母区间",
+        "difficulty": "medium",
+        "description": "给你一个字符串 s 。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。返回一个表示每个字符串片段的长度的列表。",
+        "tags": ["哈希表", "双指针", "字符串", "贪心"],
+        "externalLinks": "https://leetcode.cn/problems/partition-labels/",
+        "category": "greedy"
+      }
+    ]
+  },
+  {
+    "id": "stage-3",
+    "title": "第 3 阶段：挑战综合调度与证明型题目",
+    "description": "最后进入跳跃游戏 II、加油站、任务调度器和分发糖果，需要更强的状态抽象和贪心正确性证明。",
+    "problems": [
+      {
+        "id": "jump-game-ii",
+        "title": "45. 跳跃游戏 II",
+        "difficulty": "medium",
+        "description": "给你一个非负整数数组 nums ，你最初位于数组的第一个位置。数组中的每个元素代表你在该位置可以跳跃的最大长度。你的目标是使用最少的跳跃次数到达数组的最后一个位置。",
+        "tags": ["数组", "动态规划", "贪心"],
+        "externalLinks": "https://leetcode.cn/problems/jump-game-ii/",
+        "category": "greedy"
+      },
+      {
+        "id": "gas-station",
+        "title": "134. 加油站",
+        "difficulty": "medium",
+        "description": "在一条环路上有 n 个加油站，其中第 i 个加油站有汽油 gas[i] 升。你有一辆油箱容量无限的的汽车，从第 i 个加油站开往第 i+1 个加油站需要消耗汽油 cost[i] 升。",
+        "tags": ["数组", "贪心"],
+        "externalLinks": "https://leetcode.cn/problems/gas-station/",
+        "category": "greedy"
+      },
+      {
+        "id": "task-scheduler",
+        "title": "621. 任务调度器",
+        "difficulty": "medium",
+        "description": "给你一个用字符数组 tasks 表示的 CPU 需要执行的任务列表。其中每个字母表示一种不同种类的任务。",
+        "tags": ["数组", "哈希表", "贪心", "排序", "堆"],
+        "externalLinks": "https://leetcode.cn/problems/task-scheduler/",
+        "category": "greedy"
+      },
+      {
+        "id": "candy",
+        "title": "135. 分发糖果",
+        "difficulty": "hard",
+        "description": "n 个孩子站成一排。给你一个整数数组 ratings 表示每个孩子的评分。你需要按照以下要求，给这些孩子分发糖果。",
+        "tags": ["数组", "贪心"],
+        "externalLinks": "https://leetcode.cn/problems/candy/",
+        "category": "greedy"
+      }
+    ]
+  }
+]

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "number-basics",
+    "title": "第 1 阶段：先打牢整数性质与基础数论直觉",
+    "description": "先练习整数反转、回文判断、尾零统计与质数筛，建立位数、因子和进制视角。",
+    "problems": [
+      {
+        "id": "reverse-integer",
+        "title": "7. 整数反转",
+        "difficulty": "medium",
+        "description": "给你一个 32 位有符号整数 x，返回将 x 中数字部分反转后的结果；若溢出则返回 0。",
+        "tags": ["数学"],
+        "externalLinks": "https://leetcode.cn/problems/reverse-integer/",
+        "category": "math-number-theory"
+      },
+      {
+        "id": "palindrome-number",
+        "title": "9. 回文数",
+        "difficulty": "easy",
+        "description": "给你一个整数 x，判断它是否为回文整数。",
+        "tags": ["数学"],
+        "externalLinks": "https://leetcode.cn/problems/palindrome-number/",
+        "category": "math-number-theory"
+      },
+      {
+        "id": "factorial-trailing-zeroes",
+        "title": "172. 阶乘后的零",
+        "difficulty": "medium",
+        "description": "给定一个整数 n，返回 n! 结果中尾随零的数量。",
+        "tags": ["数学", "数论"],
+        "externalLinks": "https://leetcode.cn/problems/factorial-trailing-zeroes/",
+        "category": "math-number-theory"
+      },
+      {
+        "id": "count-primes",
+        "title": "204. 计数质数",
+        "difficulty": "medium",
+        "description": "给定整数 n，返回所有小于 n 的质数数量。",
+        "tags": ["数组", "数学", "枚举", "数论"],
+        "externalLinks": "https://leetcode.cn/problems/count-primes/",
+        "category": "math-number-theory"
+      }
+    ]
+  },
+  {
+    "id": "pow-and-mod",
+    "title": "第 2 阶段：掌握快速幂、模运算与最大公因子",
+    "description": "这一阶段聚焦高效幂运算和整除结构，重点是递归降幂、模性质与 gcd 思维。",
+    "problems": [
+      {
+        "id": "powx-n",
+        "title": "50. Pow(x, n)",
+        "difficulty": "medium",
+        "description": "实现 pow(x, n)，即计算 x 的 n 次幂，要求时间复杂度为 O(log n)。",
+        "tags": ["数学", "递归"],
+        "externalLinks": "https://leetcode.cn/problems/powx-n/",
+        "category": "math-number-theory"
+      },
+      {
+        "id": "super-pow",
+        "title": "372. 超级次方",
+        "difficulty": "medium",
+        "description": "计算 a^b mod 1337，其中 b 用数组形式给出。",
+        "tags": ["数学", "分治"],
+        "externalLinks": "https://leetcode.cn/problems/super-pow/",
+        "category": "math-number-theory"
+      },
+      {
+        "id": "greatest-common-divisor-of-strings",
+        "title": "1071. 字符串的最大公因子",
+        "difficulty": "easy",
+        "description": "给定两个字符串 str1 和 str2，返回它们的最大公共因子字符串。",
+        "tags": ["数学", "字符串"],
+        "externalLinks": "https://leetcode.cn/problems/greatest-common-divisor-of-strings/",
+        "category": "math-number-theory"
+      }
+    ]
+  },
+  {
+    "id": "math-dp-combinatorics",
+    "title": "第 3 阶段：进阶到组合计数与数论 + DP 混合题",
+    "description": "最后处理数学与动态规划交叉题型，核心是状态定义背后的数学规律与转移约束。",
+    "problems": [
+      {
+        "id": "integer-break",
+        "title": "343. 整数拆分",
+        "difficulty": "medium",
+        "description": "将正整数 n 拆分为至少两个正整数之和，并使这些整数乘积最大，返回最大乘积。",
+        "tags": ["数学", "动态规划"],
+        "externalLinks": "https://leetcode.cn/problems/integer-break/",
+        "category": "math-number-theory"
+      },
+      {
+        "id": "ugly-number-ii",
+        "title": "264. 丑数 II",
+        "difficulty": "medium",
+        "description": "给你一个整数 n，请返回第 n 个丑数。丑数是只包含质因数 2、3、5 的正整数。",
+        "tags": ["哈希表", "数学", "动态规划", "堆"],
+        "externalLinks": "https://leetcode.cn/problems/ugly-number-ii/",
+        "category": "math-number-theory"
+      },
+      {
+        "id": "unique-paths",
+        "title": "62. 不同路径",
+        "difficulty": "medium",
+        "description": "机器人位于 m x n 网格左上角，每次只能向下或向右移动一步，返回到右下角的不同路径数量。",
+        "tags": ["数学", "动态规划", "组合数学"],
+        "externalLinks": "https://leetcode.cn/problems/unique-paths/",
+        "category": "dynamic-programming"
+      }
+    ]
+  }
+]

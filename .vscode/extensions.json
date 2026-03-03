@@ -1,0 +1,24 @@
+{
+  "recommendations": [
+    // 核心开发
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+
+    // TypeScript & React
+    "ms-vscode.vscode-typescript-next",
+    "dsznajder.es7-react-js-snippets",
+
+    // CSS & Tailwind
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
+
+    // Git
+    "eamodio.gitlens",
+
+    // 开发效率
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense"
+  ],
+  "unwantedRecommendations": []
+}
