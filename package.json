@@ -62,7 +62,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.26",
-    "katex": "^0.16.27",
+    "katex": "^0.16.33",
     "lucide-react": "^0.562.0",
     "next": "16.1.6",
     "react": "19.2.3",
