@@ -596,3 +596,41 @@
   line-height: 1.6;
   position: relative;
 }
+
+.giscus-host,
+.giscus,
+.giscus-frame {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.giscus-host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+}
+
+.giscus {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+}
+
+.giscus-frame {
+  display: block;
+  margin: 0 auto;
+  border: 0;
+  background: transparent;
+  min-height: 500px;
+}
+
+@keyframes giscus-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

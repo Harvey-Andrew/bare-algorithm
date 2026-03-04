@@ -3,7 +3,7 @@ import { AlgorithmMode, LongestConsecutiveInput } from './types';
 export const MODES = [
   {
     value: AlgorithmMode.HASH_SET,
-    label: '哈希集合 (标准最优 O(N))',
+    label: '哈希集合',
   },
   {
     value: AlgorithmMode.DP_HASH_MAP,

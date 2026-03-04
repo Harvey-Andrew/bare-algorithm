@@ -22,9 +22,13 @@ describe('export-oss.mjs', () => {
     await rm(outDir, { recursive: true, force: true });
 
     try {
-      await execFileAsync(process.execPath, ['scripts/export-oss.mjs', '--out-dir', outDirName, '--skip-generate', '--skip-validate'], {
-        cwd,
-      });
+      await execFileAsync(
+        process.execPath,
+        ['scripts/export-oss.mjs', '--out-dir', outDirName, '--skip-generate', '--skip-validate'],
+        {
+          cwd,
+        }
+      );
 
       const originalReadme = await readFile(path.join(cwd, 'README.md'), 'utf8');
       const untouchedBeforeStat = await stat(exportedLicense);
@@ -34,9 +38,13 @@ describe('export-oss.mjs', () => {
       await writeFile(extraFile, 'remove me\n', 'utf8');
 
       await sleep(1200);
-      await execFileAsync(process.execPath, ['scripts/export-oss.mjs', '--out-dir', outDirName, '--skip-generate', '--skip-validate'], {
-        cwd,
-      });
+      await execFileAsync(
+        process.execPath,
+        ['scripts/export-oss.mjs', '--out-dir', outDirName, '--skip-generate', '--skip-validate'],
+        {
+          cwd,
+        }
+      );
 
       const syncedReadme = await readFile(exportedReadme, 'utf8');
       const untouchedAfterStat = await stat(exportedLicense);

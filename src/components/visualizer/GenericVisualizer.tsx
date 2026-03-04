@@ -2,6 +2,7 @@
 
 import React, { useCallback, useRef, useState } from 'react';
 
+import { ProblemCommentsButton } from '@/components/comments/ProblemCommentsSection';
 import { BackButton } from '@/components/shared/BackButton';
 import { ScaleToFit } from '@/components/shared/ScaleToFit';
 import { UnifiedPlayerControls } from '@/components/shared/UnifiedPlayerControls';
@@ -22,12 +23,14 @@ interface GenericVisualizerProps<TInput, TFrame extends BaseFrame> {
   config: AlgorithmConfig<TInput, TFrame>;
   category?: string;
   problemSlug?: string;
+  initialCommentCount?: number;
 }
 
 export function GenericVisualizer<TInput, TFrame extends BaseFrame>({
   config,
   category,
   problemSlug,
+  initialCommentCount,
 }: GenericVisualizerProps<TInput, TFrame>) {
   const [mode, setMode] = useState(config.defaultMode);
   const [input, setInput] = useState<TInput>(config.defaultInput);
@@ -152,6 +155,15 @@ export function GenericVisualizer<TInput, TFrame extends BaseFrame>({
         <LegendDisplay
           items={typeof config.legend === 'function' ? config.legend(mode) : config.legend}
         />
+      }
+      headerComments={
+        category && problemSlug ? (
+          <ProblemCommentsButton
+            category={category}
+            problem={problemSlug}
+            initialCommentCount={initialCommentCount}
+          />
+        ) : null
       }
       headerSolution={!config.hideSolution ? <SolutionButton href={solutionHref} /> : null}
       headerMode={

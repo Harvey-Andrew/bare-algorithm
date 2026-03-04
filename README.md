@@ -416,17 +416,17 @@ pnpm perf:full
 
 ## ⚙️ 工程化配置
 
-| 文件                     | 说明                                          |
-| ------------------------ | --------------------------------------------- |
-| `.editorconfig`          | 跨编辑器统一配置                              |
-| `.vscode/`               | VSCode 项目配置与推荐扩展                     |
-| `.nvmrc`                 | 指定 Node.js 版本（20.18.0）                  |
-| `.npmrc`                 | pnpm 配置（详见下方）                         |
-| `commitlint.config.js`   | 提交信息规范（15 种 type + 12 种 scope）      |
-| `.lintstagedrc.json`     | 暂存文件检查                                  |
-| `.husky/`                | Git Hooks（pre-commit + commit-msg）          |
+| 文件                     | 说明                                               |
+| ------------------------ | -------------------------------------------------- |
+| `.editorconfig`          | 跨编辑器统一配置                                   |
+| `.vscode/`               | VSCode 项目配置与推荐扩展                          |
+| `.nvmrc`                 | 指定 Node.js 版本（20.18.0）                       |
+| `.npmrc`                 | pnpm 配置（详见下方）                              |
+| `commitlint.config.js`   | 提交信息规范（15 种 type + 12 种 scope）           |
+| `.lintstagedrc.json`     | 暂存文件检查                                       |
+| `.husky/`                | Git Hooks（pre-commit + commit-msg）               |
 | `.github/workflows/`     | CI/CD（ci + oss-sync + release + stale + labeler） |
-| `.github/dependabot.yml` | 自动依赖更新（npm + GitHub Actions，每周/月） |
+| `.github/dependabot.yml` | 自动依赖更新（npm + GitHub Actions，每周/月）      |
 
 ### `.npmrc` 配置详解
 
@@ -457,7 +457,7 @@ lockfile=true             # 启用 pnpm-lock.yaml 锁文件
 | [屏幕适配](./docs/ui/屏幕适配.md)                                                    | 移动端/桌面端适配方案    |
 | [返回按钮智能导航机制](./docs/ui/返回按钮智能导航机制.md)                            | BackButton 设计与实现    |
 | [开发环境-异步边界报错修复说明](./docs/environment/开发环境-异步边界报错修复说明.md) | Next.js 异步边界修复     |
-| [开源 (OSS) 导出工作流](./docs/environment/开源%20(OSS)%20导出工作流.md)            | 公开仓库导出与同步流程   |
+| [开源 (OSS) 导出工作流](<./docs/environment/开源%20(OSS)%20导出工作流.md>)           | 公开仓库导出与同步流程   |
 | [算法可视化帧生成模式设计](./docs/算法可视化帧生成模式设计.md)                       | 状态快照与函数式推帧模式 |
 | [CONTRIBUTING.md](./CONTRIBUTING.md)                                                 | 贡献指南                 |
 

@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation';
 
 import { TypeScriptCodeHint } from '@/components/shared/TypeScriptCodeHint';
 import { ProblemVisualizerClient } from '@/components/visualizer/ProblemVisualizerClient';
+import { fetchDiscussionCommentCount } from '@/lib/comments/fetch-discussion-count';
+import { getProblemCommentTerm } from '@/lib/comments/problem-comment-thread';
 import { getCategoryProblemData } from '@/lib/problems/problem-catalog.generated';
 import { findProblemMeta } from '@/lib/problems/problem-data';
 import { getAllProblemRouteParams, isKnownProblemRoute } from '@/lib/problems/problem-server';
@@ -46,10 +48,17 @@ export default async function ProblemPage({ params }: PageProps) {
     notFound();
   }
 
+  const term = getProblemCommentTerm(category, problem);
+  const initialCommentCount = await fetchDiscussionCommentCount(term);
+
   return (
     <div className="bg-slate-950">
       <TypeScriptCodeHint />
-      <ProblemVisualizerClient category={category} problemSlug={problem} />
+      <ProblemVisualizerClient
+        category={category}
+        problemSlug={problem}
+        initialCommentCount={initialCommentCount}
+      />
     </div>
   );
 }

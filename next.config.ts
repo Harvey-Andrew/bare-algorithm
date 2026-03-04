@@ -9,6 +9,16 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 const scriptSrc = ["'self'", "'unsafe-inline'", isDevelopment ? "'unsafe-eval'" : null]
   .filter(Boolean)
   .join(' ');
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  `script-src ${scriptSrc} https://giscus.app`,
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self' data:",
+  "connect-src 'self' https:",
+  "frame-src 'self' https://giscus.app",
+  "frame-ancestors 'none'",
+].join('; ');
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -32,7 +42,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: `default-src 'self'; script-src ${scriptSrc}; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';`,
+            value: contentSecurityPolicy,
           },
         ],
       },

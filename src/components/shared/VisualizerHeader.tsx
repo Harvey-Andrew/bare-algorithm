@@ -9,7 +9,7 @@ import { useIsDesktop } from '@/hooks/useIsDesktop';
 import { getDefaultModeActiveColorClass } from '@/lib/visualizer/mode-colors';
 
 // 三按钮共用基础样式
-const headerBtnBase =
+export const headerBtnBase =
   'inline-flex items-center justify-center px-2 sm:px-3 py-1 text-white text-xs sm:text-base font-bold rounded-lg border transition-colors cursor-pointer shrink-0';
 
 // --- Problem Title Component ---

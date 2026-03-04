@@ -56,9 +56,14 @@ type AnyAlgorithmConfig = AlgorithmConfig<unknown, BaseFrame>;
 interface ProblemVisualizerClientProps {
   category: string;
   problemSlug: string;
+  initialCommentCount?: number;
 }
 
-export function ProblemVisualizerClient({ category, problemSlug }: ProblemVisualizerClientProps) {
+export function ProblemVisualizerClient({
+  category,
+  problemSlug,
+  initialCommentCount,
+}: ProblemVisualizerClientProps) {
   const [config, setConfig] = useState<AnyAlgorithmConfig | null>(null);
   const [loadFailed, setLoadFailed] = useState(false);
 
@@ -101,5 +106,12 @@ export function ProblemVisualizerClient({ category, problemSlug }: ProblemVisual
     return <VisualizerLoadingScreen />;
   }
 
-  return <GenericVisualizer config={config} category={category} problemSlug={problemSlug} />;
+  return (
+    <GenericVisualizer
+      config={config}
+      category={category}
+      problemSlug={problemSlug}
+      initialCommentCount={initialCommentCount}
+    />
+  );
 }

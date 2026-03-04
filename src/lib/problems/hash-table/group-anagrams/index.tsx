@@ -71,21 +71,21 @@ function RendererVisualizer({
   } = currentFrame;
 
   return (
-    <div className="p-4 space-y-6">
+    <div className="min-w-88 w-full overflow-hidden p-2 space-y-3 sm:min-w-lg sm:p-4 sm:space-y-6">
       {/* 顶部指示器面板 */}
-      <div className="bg-slate-800/80 p-4 rounded-xl border border-slate-700 flex justify-between items-center shadow-lg relative overflow-hidden">
-        <div className="p-2 px-6 rounded-lg font-mono font-bold text-lg flex items-center justify-center border-2 border-slate-600 bg-slate-900 shadow-inner text-slate-300">
+      <div className="bg-slate-800/80 p-2 sm:p-4 rounded-xl border border-slate-700 flex justify-between items-center shadow-lg relative overflow-hidden">
+        <div className="p-1.5 px-3 sm:p-2 sm:px-6 rounded-lg font-mono font-bold text-sm sm:text-lg flex items-center justify-center border-2 border-slate-600 bg-slate-900 shadow-inner text-slate-300">
           输入字符环列
         </div>
 
-        <div className="flex-1 px-4 flex gap-2 items-center justify-start flex-wrap max-h-24 overflow-y-auto">
+        <div className="flex-1 px-2 sm:px-4 flex gap-1.5 sm:gap-2 items-center justify-start flex-wrap max-h-24 overflow-y-auto">
           {strs.map((str, idx) => {
             const isCurrent = idx === currentIndex;
             const isProcessed = idx < currentIndex;
             return (
               <span
                 key={`str-${idx}`}
-                className={`px-3 py-1 rounded text-sm font-mono border transition-all
+                className={`px-2 py-0.5 sm:px-3 sm:py-1 rounded text-xs sm:text-sm font-mono border transition-all
                    ${
                      isCurrent
                        ? 'bg-blue-600 text-white border-blue-400 scale-110 shadow-lg z-10 font-bold'
@@ -105,7 +105,7 @@ function RendererVisualizer({
       {/* 动态核心运算展示区 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* 左侧：Key 的提取工厂 */}
-        <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 min-h-[300px] flex flex-col relative overflow-hidden">
+        <div className="bg-slate-800/50 p-3 sm:p-6 rounded-xl border border-slate-700/50 min-h-[200px] sm:min-h-[300px] flex flex-col relative overflow-hidden">
           <div className="absolute top-2 left-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest z-10">
             Hash Key 提取器
           </div>
@@ -195,37 +195,12 @@ function RendererVisualizer({
                   </div>
                 </div>
               )}
-
-              <div className="flex flex-col items-center">
-                <span className="text-xs text-slate-500 font-bold uppercase tracking-wider mb-2">
-                  生成最终 Hash Key
-                </span>
-                <div
-                  className={`px-6 py-2 rounded border-2 font-mono text-xl max-w-full overflow-hidden text-ellipsis whitespace-nowrap
-                    ${
-                      calculatedKey
-                        ? 'bg-emerald-900/20 text-emerald-400 border-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.3)]'
-                        : 'bg-slate-900 text-slate-600 border-slate-700 border-dashed'
-                    }
-                  `}
-                >
-                  {calculatedKey !== null ? (
-                    currentMode === AlgorithmMode.PRIME_MULTIPLICATION ? (
-                      <span className="text-purple-400">{String(calculatedKey)}n</span>
-                    ) : (
-                      `"${calculatedKey}"`
-                    )
-                  ) : (
-                    '???'
-                  )}
-                </div>
-              </div>
             </div>
           )}
         </div>
 
         {/* 右侧：Map 大仓库 */}
-        <div className="bg-slate-800/50 p-6 rounded-xl border border-slate-700/50 min-h-[300px] flex flex-col relative overflow-hidden">
+        <div className="bg-slate-800/50 p-3 sm:p-6 rounded-xl border border-slate-700/50 min-h-[200px] sm:min-h-[300px] flex flex-col relative overflow-hidden">
           <div className="absolute top-2 left-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest z-10 w-full">
             主 Map 分组归档仓
           </div>

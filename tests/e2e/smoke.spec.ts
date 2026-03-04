@@ -28,4 +28,10 @@ test('@smoke two-sum detail page loads visualizer shell', async ({ page }) => {
 
   await page.keyboard.press('ArrowRight');
   await expect(progressLabel).toHaveText(/2\/\d+/);
+
+  const commentsButton = page.getByRole('button', { name: /讨论/ }).first();
+  await expect(commentsButton).toBeVisible();
+
+  await commentsButton.click();
+  await expect(page.getByRole('dialog', { name: '讨论弹窗' })).toBeVisible();
 });

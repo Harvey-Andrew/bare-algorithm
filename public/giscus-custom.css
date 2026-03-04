@@ -1,0 +1,15 @@
+/*
+ * 自定义 giscus 暗色主题
+ * 继承官方 dark 主题，增加内边距防止内容贴边
+ */
+@import url('https://giscus.app/themes/dark.css');
+
+/* 主容器增加水平内边距 */
+.gsc-main {
+  padding: 4px 16px 8px;
+}
+
+/* 隐藏加载动画（由外层骨架屏替代） */
+.gsc-loading {
+  display: none !important;
+}

@@ -107,18 +107,14 @@ function generateCountHashFrames(input: GroupAnagramsInput): GroupAnagramsFrame[
     });
   };
 
-  takeSnapshot(
-    -1,
-    `[最优工业解法: 频率数组序列化] 在外层开辟一个仅长 26 的连续物理内存 Array，极致复用防 GC。`,
-    3
-  );
+  takeSnapshot(-1, ` 在外层开辟一个仅长 26 的连续物理内存 Array，极致复用防 GC。`, 3);
 
   for (let i = 0; i < strs.length; i++) {
     const s = strs[i];
     takeSnapshot(i, `开始处理第 ${i + 1} 个字符串 "${s}"。`, 5);
 
     count.fill(0);
-    takeSnapshot(i, `【关键极速操作】将常数级的外层 count 数组全部格式化清零，耗时极短。`, 6);
+    takeSnapshot(i, `将常数级的外层 count 数组全部格式化清零，耗时极短。`, 6);
 
     for (let j = 0; j < s.length; j++) {
       const charIdx = s.charCodeAt(j) - 97;

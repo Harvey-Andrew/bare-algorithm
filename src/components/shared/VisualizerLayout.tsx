@@ -17,6 +17,8 @@ interface VisualizerLayoutProps {
   /** 图例区域 - 用 flex-1 占剩余空间 */
   headerLegend?: React.ReactNode;
   /** 题解按钮 */
+  headerComments?: React.ReactNode;
+  /** 题解按钮 */
   headerSolution?: React.ReactNode;
   /** 方法切换 */
   headerMode?: React.ReactNode;
@@ -42,6 +44,7 @@ export function VisualizerLayout({
   headerInput,
   headerRandom,
   headerLegend,
+  headerComments,
   headerSolution,
   headerMode,
   visualizerContent,
@@ -81,6 +84,9 @@ export function VisualizerLayout({
 
           {/* 随机 */}
           {headerRandom && <div className="shrink-0">{headerRandom}</div>}
+
+          {/* 讨论 */}
+          {headerComments && <div className="shrink-0">{headerComments}</div>}
 
           {/* 图例 - 桌面端占剩余空间 */}
           <div className="hidden sm:flex flex-1 items-center justify-center min-w-0">
