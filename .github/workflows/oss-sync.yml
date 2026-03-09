@@ -19,6 +19,9 @@ concurrency:
   group: oss-sync-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  HUSKY: '0'
+
 jobs:
   sync:
     name: Export and Sync Public Repo
