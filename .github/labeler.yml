@@ -1,29 +1,19 @@
 'core:algorithm':
-  - any:
-      - changed-files:
-          - any-glob-to-any-file: 'src/lib/problems/**/*'
+  - changed-files:
+      - any-glob-to-any-file: ['src/lib/problems/**/*']
 
 'core:ui':
-  - any:
-      - changed-files:
-          - any-glob-to-any-file: 'src/components/**/*'
-          - any-glob-to-any-file: 'src/app/**/*'
-          - any-glob-to-any-file: 'styles/**/*'
+  - changed-files:
+      - any-glob-to-any-file: ['src/components/**/*', 'src/app/**/*', 'styles/**/*']
 
 'dx:ci':
-  - any:
-      - changed-files:
-          - any-glob-to-any-file: '.github/**/*'
-          - any-glob-to-any-file: 'scripts/**/*'
+  - changed-files:
+      - any-glob-to-any-file: ['.github/**/*', 'scripts/**/*']
 
 'dx:deps':
-  - any:
-      - changed-files:
-          - any-glob-to-any-file: 'package.json'
-          - any-glob-to-any-file: 'pnpm-lock.yaml'
+  - changed-files:
+      - any-glob-to-any-file: ['package.json', 'pnpm-lock.yaml']
 
 'docs':
-  - any:
-      - changed-files:
-          - any-glob-to-any-file: 'docs/**/*'
-          - any-glob-to-any-file: '*.md'
+  - changed-files:
+      - any-glob-to-any-file: ['docs/**/*', '*.md']

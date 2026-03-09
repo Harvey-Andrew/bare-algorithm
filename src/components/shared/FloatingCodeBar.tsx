@@ -36,7 +36,7 @@ export function FloatingCodeBar({ highlightLine, message, codeContent }: Floatin
         <span className="text-xs font-mono text-purple-300 font-bold shrink-0">
           L{highlightLine + 1}
         </span>
-        <span className="text-xs text-slate-400 truncate flex-1 text-left">{message}</span>
+        <span className="text-xs text-slate-400 line-clamp-2 flex-1 text-left">{message}</span>
         <ChevronUp size={14} className="text-slate-500 shrink-0" />
       </button>
 

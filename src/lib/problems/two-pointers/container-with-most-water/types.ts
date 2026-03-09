@@ -1,8 +1,9 @@
 import type { BaseFrame } from '@/types/algorithm';
 
 export enum AlgorithmMode {
-  TP = 'TP',
-  BRUTE_FORCE = 'BRUTE_FORCE',
+  CLASSIC = 'CLASSIC',
+  FAST_SKIP = 'FAST_SKIP',
+  SORT_INDEX = 'SORT_INDEX',
 }
 
 export interface ContainerFrame extends BaseFrame {
@@ -14,6 +15,12 @@ export interface ContainerFrame extends BaseFrame {
 
   // 用于渲染额外的信息
   currentArea?: number;
+
+  // 排序+索引专属状态
+  sortedHeights?: Array<{ height: number; originalIdx: number }>;
+  currentProcessedIdx?: number;
+  minIdx?: number;
+  maxIdx?: number;
 }
 
 export interface ContainerInput {

@@ -123,9 +123,7 @@ export function ProblemCommentsButton({
     setOpen(false);
   }, []);
 
-  const buttonTitle = viewerLogin
-    ? `已登录 GitHub：${viewerLogin}`
-    : '可先输入讨论内容，发送时会按需引导 GitHub 登录';
+  const buttonTitle = viewerLogin ? `已登录 GitHub：${viewerLogin}` : '需登录GitHub账号进行讨论';
 
   return (
     <>

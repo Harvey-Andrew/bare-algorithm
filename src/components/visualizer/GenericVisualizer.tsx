@@ -200,7 +200,7 @@ export function GenericVisualizer<TInput, TFrame extends BaseFrame>({
         <div className="space-y-1.5">
           <div className="hidden lg:flex p-2 bg-slate-900/50 border border-slate-800 rounded-lg items-center gap-2">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse shrink-0" />
-            <p className="text-xs font-mono text-slate-300 truncate">
+            <p className="text-xs font-mono text-slate-300 line-clamp-2">
               <span className="text-slate-500 mr-2">LOG:</span>
               {currentFrame.message}
             </p>
