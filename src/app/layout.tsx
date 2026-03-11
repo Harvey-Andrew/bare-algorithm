@@ -41,11 +41,20 @@ export const metadata: Metadata = {
     siteName: '朴素算法',
     title: '朴素算法',
     description: '通过交互式动画直观理解算法逻辑，覆盖 200+ LeetCode 题目的可视化解题',
+    images: [
+      {
+        url: '/barealgo.png',
+        width: 1200,
+        height: 630,
+        alt: '朴素算法 - 算法可视化平台',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: '朴素算法',
     description: '通过交互式动画直观理解算法逻辑，覆盖 200+ LeetCode 题目的可视化解题',
+    images: ['/barealgo.png'],
   },
   icons: {
     icon: '/icon.png',
