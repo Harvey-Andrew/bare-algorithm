@@ -64,47 +64,52 @@ pnpm format     # 格式化代码
 
 本项目采用三层代码质量保障机制：
 
+#### 🖥️ 第一层：IDE 实时提示
+
 ```mermaid
 flowchart TB
-    subgraph Layer1["🖥️ 第一层：IDE 实时提示"]
-        A1[开发者编写代码] --> A2{代码规范?}
-        A2 -->|否| A3["🔴 ESLint 红线警告"]
-        A3 --> A4[开发者修复]
-        A4 --> A2
-        A2 -->|是| A5["✅ 代码正常"]
-    end
+    A1[开发者编写代码] --> A2{代码规范?}
+    A2 -->|否| A3["🔴 ESLint 红线警告"]
+    A3 --> A4[开发者修复]
+    A4 --> A2
+    A2 -->|是| A5["✅ 代码正常"]
 
-    subgraph Layer2["📝 第二层：本地提交拦截"]
-        B1[git commit] --> B2[Husky 触发 pre-commit]
-        B2 --> B3[lint-staged 检查暂存文件]
-        B3 --> B4{ESLint 通过?}
-        B4 -->|否| B5["❌ 提交被拦截"]
-        B5 --> B6[开发者修复后重新提交]
-        B6 --> B1
-        B4 -->|是| B7[commitlint 校验]
-        B7 --> B8{提交信息规范?}
-        B8 -->|否| B5
-        B8 -->|是| B9["✅ 提交成功"]
-    end
+    style A5 fill:#e8f5e9,stroke:#4caf50
+```
 
-    subgraph Layer3["☁️ 第三层：CI 流水线（5 Jobs）"]
-        C1[Push / PR] --> C2[GitHub Actions 触发]
-        C2 --> C3["Lint Job: 内容校验 + ESLint + Prettier + tsc"]
-        C3 --> C4["Unit Tests Job: Vitest + 覆盖率"]
-        C3 --> C5["Security Audit Job"]
-        C3 --> C6["Build Job"]
-        C6 --> C7["E2E Smoke Job: Playwright"]
-        C4 & C5 & C7 --> C8{全部通过?}
-        C8 -->|否| C9["❌ CI 失败，阻止合并"]
-        C8 -->|是| C10["✅ 允许合并"]
-    end
+#### 📝 第二层：本地提交拦截
 
-    A5 --> B1
-    B9 --> C1
+```mermaid
+flowchart TB
+    B1[git commit] --> B2[Husky 触发 pre-commit]
+    B2 --> B3[lint-staged 检查暂存文件]
+    B3 --> B4{ESLint 通过?}
+    B4 -->|否| B5["❌ 提交被拦截"]
+    B5 --> B6[开发者修复后重新提交]
+    B6 --> B1
+    B4 -->|是| B7[commitlint 校验]
+    B7 --> B8{提交信息规范?}
+    B8 -->|否| B5
+    B8 -->|是| B9["✅ 提交成功"]
 
-    style Layer1 fill:#e8f5e9,stroke:#4caf50
-    style Layer2 fill:#e3f2fd,stroke:#2196f3
-    style Layer3 fill:#fff3e0,stroke:#ff9800
+    style B9 fill:#e3f2fd,stroke:#2196f3
+```
+
+#### ☁️ 第三层：CI 流水线（5 Jobs）
+
+```mermaid
+flowchart TB
+    C1[Push / PR] --> C2[GitHub Actions 触发]
+    C2 --> C3["Lint Job: 内容校验 + ESLint + Prettier + tsc"]
+    C3 --> C4["Unit Tests Job: Vitest + 覆盖率"]
+    C3 --> C5["Security Audit Job"]
+    C3 --> C6["Build Job"]
+    C6 --> C7["E2E Smoke Job: Playwright"]
+    C4 & C5 & C7 --> C8{全部通过?}
+    C8 -->|否| C9["❌ CI 失败，阻止合并"]
+    C8 -->|是| C10["✅ 允许合并"]
+
+    style C10 fill:#fff3e0,stroke:#ff9800
 ```
 
 ### 提交流程
@@ -289,4 +294,9 @@ build(build): :construction_worker: 升级 Next.js 到 16.1.1
 
 ## 问题反馈
 
-如有问题或建议，请通过 [Issues](../../issues) 反馈。
+我们非常欢迎任何形式的反馈！你可以通过以下方式参与：
+
+- 🏠 **站内提 Issue**：在 [barealgo.com](https://www.barealgo.com/) 首页直接填写表单提交，无需跳转 GitHub
+- 🐛 **GitHub Issues**：在 [Issues](../../issues) 页面提交 Bug、功能建议或内容反馈
+- 💬 **题目讨论**：每道算法题页面内置了基于 GitHub Discussions 的讨论区，用 GitHub 账号登录即可参与
+- 🗣️ **Discussions**：在 [Discussions](../../discussions) 页面进行更广泛的交流

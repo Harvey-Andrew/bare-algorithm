@@ -17,6 +17,10 @@
 ## 🤖 AI 驱动开发
 
 <p align="center">
+  <a href="https://github.com/Harvey-Andrew"><img src="https://img.shields.io/badge/Harvey--Andrew-项目作者-181717?style=for-the-badge&logo=github&logoColor=white" alt="Harvey-Andrew" /></a>
+</p>
+
+<p align="center">
   <a href="https://claude.ai"><img src="https://img.shields.io/badge/Claude-Anthropic-d97706?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" /></a>
   <a href="https://chat.openai.com"><img src="https://img.shields.io/badge/ChatGPT-OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="ChatGPT" /></a>
   <a href="https://gemini.google.com"><img src="https://img.shields.io/badge/Gemini-Google-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini" /></a>
@@ -45,6 +49,41 @@
 - **自动缩放**：`<ScaleToFit>` 容器确保可视化画布在任意屏幕不溢出
 - **PR 贡献引导**：当算法尚未实现时，友好的"敬请期待"页面引导用户直接提交 PR 或通过 AI 工具自助生成
 - **安全审计**：内置一站式安全检查脚本（依赖漏洞 + 密钥检测 + 许可证合规 + 安全头验证）
+
+---
+
+## 💬 社区参与
+
+> **遇到问题？有想法？随时告诉我们。** 我们鼓励所有用户积极反馈，无论是算法逻辑错误、UI 异常，还是功能建议——你的每一条反馈都在帮助这个项目变得更好。
+
+### 题目讨论
+
+每道算法题页面都内置了 **讨论区**（基于 [giscus](https://giscus.app/) + GitHub Discussions），你可以：
+
+- 💡 分享自己的解题思路或优化方案
+- ❓ 提出对题解的疑问
+- 🤝 与其他同学交流算法细节
+
+无需离开页面，直接用 GitHub 账号登录即可参与讨论。
+
+### 站内提 Issue
+
+项目首页提供了 **站内 Issue 提交** 功能，无需跳转 GitHub，直接填写表单即可创建 Issue。支持 8 种反馈类型：
+
+| 类型               | 适用场景                   |
+| ------------------ | -------------------------- |
+| 🐛 Bug 问题        | 程序崩溃、报错、行为异常   |
+| 💡 功能建议        | 希望新增的功能或改进       |
+| ⚙️ 算法错误        | 算法逻辑或帧生成结果不正确 |
+| 🎨 UI / 样式问题   | 界面显示异常、暗色模式适配 |
+| 🚀 性能问题        | 动画卡顿、加载缓慢         |
+| 📝 题目内容反馈    | 题目描述有误或缺失         |
+| 📖 文档 / 题解改进 | 题解内容补充或纠错         |
+| ❓ 使用问题        | 使用方式、操作流程相关     |
+
+你也可以直接在 GitHub 上 [创建 Issue](https://github.com/Harvey-Andrew/bare-algorithm/issues/new) 或 [参与 Discussions](https://github.com/Harvey-Andrew/bare-algorithm/discussions)。
+
+> 架构细节见 [题目讨论系统架构说明](./docs/comments/题目讨论系统架构说明.md) 和 [站内 Issue 提交系统架构说明](./docs/comments/站内Issue提交系统架构说明.md)。
 
 ---
 
@@ -448,24 +487,39 @@ lockfile=true             # 启用 pnpm-lock.yaml 锁文件
 
 ## 📚 文档索引
 
-| 文档                                                                                 | 说明                     |
-| ------------------------------------------------------------------------------------ | ------------------------ |
-| [项目配置说明](./docs/项目配置说明.md)                                               | 所有配置文件详细说明     |
-| [测试框架工作流](./docs/testing/测试框架工作流.md)                                   | 单元测试与 E2E 测试 SOP  |
-| [性能分析工作流](./docs/performance/性能分析工作流.md)                               | Lighthouse + 深挖 SOP    |
-| [安全审计工作流](./docs/security/安全审计工作流.md)                                  | 自动化安全检查与合规 SOP |
-| [屏幕适配](./docs/ui/屏幕适配.md)                                                    | 移动端/桌面端适配方案    |
-| [返回按钮智能导航机制](./docs/ui/返回按钮智能导航机制.md)                            | BackButton 设计与实现    |
-| [开发环境-异步边界报错修复说明](./docs/environment/开发环境-异步边界报错修复说明.md) | Next.js 异步边界修复     |
-| [开源 (OSS) 导出工作流](<./docs/environment/开源%20(OSS)%20导出工作流.md>)           | 公开仓库导出与同步流程   |
-| [算法可视化帧生成模式设计](./docs/算法可视化帧生成模式设计.md)                       | 状态快照与函数式推帧模式 |
-| [CONTRIBUTING.md](./CONTRIBUTING.md)                                                 | 贡献指南                 |
+| 文档                                                                                 | 说明                      |
+| ------------------------------------------------------------------------------------ | ------------------------- |
+| [项目配置说明](./docs/项目配置说明.md)                                               | 所有配置文件详细说明      |
+| [测试框架工作流](./docs/testing/测试框架工作流.md)                                   | 单元测试与 E2E 测试 SOP   |
+| [性能分析工作流](./docs/performance/性能分析工作流.md)                               | Lighthouse + 深挖 SOP     |
+| [安全审计工作流](./docs/security/安全审计工作流.md)                                  | 自动化安全检查与合规 SOP  |
+| [屏幕适配](./docs/ui/屏幕适配.md)                                                    | 移动端/桌面端适配方案     |
+| [返回按钮智能导航机制](./docs/ui/返回按钮智能导航机制.md)                            | BackButton 设计与实现     |
+| [开发环境-异步边界报错修复说明](./docs/environment/开发环境-异步边界报错修复说明.md) | Next.js 异步边界修复      |
+| [开源 (OSS) 导出工作流](<./docs/environment/开源%20(OSS)%20导出工作流.md>)           | 公开仓库导出与同步流程    |
+| [算法可视化帧生成模式设计](./docs/算法可视化帧生成模式设计.md)                       | 状态快照与函数式推帧模式  |
+| [题目讨论系统架构说明](./docs/comments/题目讨论系统架构说明.md)                      | giscus 讨论系统设计与实现 |
+| [站内 Issue 提交系统架构说明](./docs/comments/站内Issue提交系统架构说明.md)          | Issue 提交系统设计与实现  |
+| [CONTRIBUTING.md](./CONTRIBUTING.md)                                                 | 贡献指南                  |
 
 ---
 
 ## 🤝 贡献指南
 
 详见 [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+### 贡献者
+
+<p align="center">
+  <a href="https://github.com/Harvey-Andrew"><img src="https://img.shields.io/badge/Harvey--Andrew-项目作者-181717?style=for-the-badge&logo=github&logoColor=white" alt="Harvey-Andrew" /></a>
+</p>
+
+<p align="center">
+  <a href="https://claude.ai"><img src="https://img.shields.io/badge/Claude-Anthropic-d97706?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" /></a>
+  <a href="https://chat.openai.com"><img src="https://img.shields.io/badge/ChatGPT-OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white" alt="ChatGPT" /></a>
+  <a href="https://gemini.google.com"><img src="https://img.shields.io/badge/Gemini-Google-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Gemini" /></a>
+</p>
+<p align="center"><sub>三位 AI 编程助手全程深度参与项目架构设计、代码实现与文档编写</sub></p>
 
 ---
 

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Github, Home } from 'lucide-react';
 
+import { HomeIssueComposer } from '@/components/issues/HomeIssueComposer';
 import { SearchTrigger } from './SearchTrigger';
 
 const iconButtonClass =
@@ -46,6 +47,7 @@ export function ClientNavbar() {
           >
             <Github className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
           </a>
+          <HomeIssueComposer className={iconButtonClass} ariaLabel="提交 Issue" compact />
         </div>
       </div>
     </nav>
