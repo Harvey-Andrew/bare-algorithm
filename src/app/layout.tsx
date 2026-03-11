@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://algo.example.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.barealgo.com'),
   title: {
     default: '朴素算法',
     template: '%s',
@@ -44,8 +44,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: '/barealgo.png',
-        width: 1200,
-        height: 630,
+        width: 288,
+        height: 286,
         alt: '朴素算法 - 算法可视化平台',
       },
     ],
