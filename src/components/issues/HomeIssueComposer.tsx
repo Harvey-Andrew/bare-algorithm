@@ -285,7 +285,6 @@ export function HomeIssueComposer({
       } catch {
         if (!cancelled) {
           setTurnstileReady(false);
-          setErrorMessage('机器人验证组件加载失败，请稍后重试。');
         }
       }
     };
@@ -404,6 +403,7 @@ export function HomeIssueComposer({
           issueUrl: data.issueUrl,
         });
         setForm(INITIAL_FORM);
+        setOpen(false);
       } catch {
         setErrorMessage('网络异常，暂时无法创建 Issue，请稍后重试。');
       } finally {
@@ -430,278 +430,286 @@ export function HomeIssueComposer({
 
       {mounted
         ? createPortal(
-            open ? (
-              <div className="fixed inset-0 z-[10000] flex items-center justify-center p-3 sm:p-6">
-                <button
-                  type="button"
-                  className="absolute inset-0 h-full w-full bg-slate-950/82 backdrop-blur-md"
-                  onClick={closeDialog}
-                  aria-label="关闭 issue 弹窗"
-                />
-
-                <div
-                  role="dialog"
-                  aria-modal="true"
-                  aria-label="站内提 issue"
-                  className="animate-fade-in animate-scale-in relative flex h-[min(92dvh,860px)] w-full max-w-[860px] flex-col overflow-hidden rounded-[22px] border border-cyan-300/18 bg-[linear-gradient(180deg,rgba(2,6,23,0.98),rgba(2,6,23,0.95))] shadow-[0_28px_88px_rgba(2,6,23,0.72)] ring-1 ring-white/10"
-                >
+            <>
+              {open && (
+                <div className="fixed inset-0 z-[10000] flex items-center justify-center p-3 sm:p-6">
                   <button
                     type="button"
+                    className="absolute inset-0 h-full w-full bg-slate-950/82 backdrop-blur-md"
                     onClick={closeDialog}
-                    className="absolute right-3 top-3 z-10 inline-flex size-10 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-slate-900/80 text-slate-300 transition-colors hover:bg-slate-800 hover:text-white"
                     aria-label="关闭 issue 弹窗"
+                  />
+
+                  <div
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label="站内提 issue"
+                    className="animate-fade-in animate-scale-in relative flex h-[min(92dvh,860px)] w-full max-w-[860px] flex-col overflow-hidden rounded-[22px] border border-cyan-300/18 bg-[linear-gradient(180deg,rgba(2,6,23,0.98),rgba(2,6,23,0.95))] shadow-[0_28px_88px_rgba(2,6,23,0.72)] ring-1 ring-white/10"
                   >
-                    <X className="size-4" />
-                  </button>
-
-                  {errorMessage ? (
-                    <div
-                      role="alert"
-                      aria-live="assertive"
-                      className="pointer-events-none absolute left-1/2 top-4 z-20 w-[min(calc(100%-2.5rem),520px)] -translate-x-1/2"
+                    <button
+                      type="button"
+                      onClick={closeDialog}
+                      className="absolute right-3 top-3 z-10 inline-flex size-10 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-slate-900/80 text-slate-300 transition-colors hover:bg-slate-800 hover:text-white"
+                      aria-label="关闭 issue 弹窗"
                     >
-                      <div className="pointer-events-auto flex items-start gap-2 rounded-xl border border-rose-400/35 bg-rose-500/15 px-3 py-2.5 shadow-[0_12px_32px_rgba(127,29,29,0.28)] backdrop-blur-sm">
-                        <CircleAlert className="mt-0.5 h-4 w-4 shrink-0 text-rose-300" />
-                        <p className="flex-1 text-sm leading-5 text-rose-100">{errorMessage}</p>
-                        <button
-                          type="button"
-                          onClick={() => setErrorMessage(null)}
-                          className="inline-flex size-5 cursor-pointer items-center justify-center rounded-md text-rose-200/85 transition-colors hover:bg-rose-500/20 hover:text-rose-100"
-                          aria-label="关闭错误提示"
-                        >
-                          <X className="h-3.5 w-3.5" />
-                        </button>
-                      </div>
-                    </div>
-                  ) : null}
+                      <X className="size-4" />
+                    </button>
 
-                  {createdIssue ? (
-                    <div
-                      role="status"
-                      aria-live="polite"
-                      className="pointer-events-none absolute left-1/2 top-4 z-20 w-[min(calc(100%-2.5rem),520px)] -translate-x-1/2"
-                    >
-                      <div className="pointer-events-auto flex items-start gap-2 rounded-xl border border-emerald-400/35 bg-emerald-500/15 px-3 py-2.5 shadow-[0_12px_32px_rgba(6,78,59,0.28)] backdrop-blur-sm">
-                        <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
-                        <div className="flex-1 text-sm leading-5 text-emerald-100">
-                          <p>已成功创建 Issue #{createdIssue.issueNumber}</p>
-                          <a
-                            href={createdIssue.issueUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="mt-1 inline-block text-emerald-200 underline decoration-emerald-300/60 underline-offset-2 hover:text-emerald-100"
+                    {errorMessage ? (
+                      <div
+                        role="alert"
+                        aria-live="assertive"
+                        className="pointer-events-none absolute left-1/2 top-4 z-20 w-[min(calc(100%-2.5rem),520px)] -translate-x-1/2"
+                      >
+                        <div className="pointer-events-auto flex items-start gap-2 rounded-xl border border-rose-400/35 bg-rose-500/15 px-3 py-2.5 shadow-[0_12px_32px_rgba(127,29,29,0.28)] backdrop-blur-sm">
+                          <CircleAlert className="mt-0.5 h-4 w-4 shrink-0 text-rose-300" />
+                          <p className="flex-1 text-sm leading-5 text-rose-100">{errorMessage}</p>
+                          <button
+                            type="button"
+                            onClick={() => setErrorMessage(null)}
+                            className="inline-flex size-5 cursor-pointer items-center justify-center rounded-md text-rose-200/85 transition-colors hover:bg-rose-500/20 hover:text-rose-100"
+                            aria-label="关闭错误提示"
                           >
-                            查看 Issue 详情 ↗
-                          </a>
+                            <X className="h-3.5 w-3.5" />
+                          </button>
                         </div>
-                        <button
-                          type="button"
-                          onClick={() => setCreatedIssue(null)}
-                          className="inline-flex size-5 cursor-pointer items-center justify-center rounded-md text-emerald-200/85 transition-colors hover:bg-emerald-500/20 hover:text-emerald-100"
-                          aria-label="关闭成功提示"
-                        >
-                          <X className="h-3.5 w-3.5" />
-                        </button>
                       </div>
-                    </div>
-                  ) : null}
+                    ) : null}
 
-                  <div className="overflow-auto px-4 pb-5 pt-6 sm:px-6 sm:pb-6 sm:pt-7">
-                    <div className="pr-8 sm:pr-12">
-                      <h2 className="mt-2 text-2xl font-black tracking-tight text-slate-100 sm:text-3xl">
-                        提交到 GitHub Issue
-                      </h2>
-                    </div>
+                    <div className="overflow-auto px-4 pb-5 pt-6 sm:px-6 sm:pb-6 sm:pt-7">
+                      <div className="pr-8 sm:pr-12">
+                        <h2 className="mt-2 text-2xl font-black tracking-tight text-slate-100 sm:text-3xl">
+                          提交到 GitHub Issue
+                        </h2>
+                      </div>
 
-                    <form
-                      onSubmit={handleSubmit}
-                      noValidate
-                      className="mt-5 space-y-4 sm:space-y-5"
-                    >
-                      <div className="grid gap-4 sm:grid-cols-2">
-                        <div className="space-y-2 text-sm" ref={dropdownRef}>
-                          <span className="text-slate-300">Issue 类型</span>
-                          <div className="relative">
-                            <button
-                              type="button"
-                              onClick={() => setTypeDropdownOpen((prev) => !prev)}
-                              className="flex w-full items-center justify-between rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-left text-slate-100 outline-none transition-colors hover:border-slate-500 focus:border-cyan-400"
-                            >
-                              <span className="flex items-center gap-2">
-                                <span className="text-base leading-none">
-                                  {ISSUE_TYPE_OPTIONS.find((o) => o.value === form.type)?.icon}
+                      <form
+                        onSubmit={handleSubmit}
+                        noValidate
+                        className="mt-5 space-y-4 sm:space-y-5"
+                      >
+                        <div className="grid gap-4 sm:grid-cols-2">
+                          <div className="space-y-2 text-sm" ref={dropdownRef}>
+                            <span className="text-slate-300">Issue 类型</span>
+                            <div className="relative">
+                              <button
+                                type="button"
+                                onClick={() => setTypeDropdownOpen((prev) => !prev)}
+                                className="flex w-full items-center justify-between rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-left text-slate-100 outline-none transition-colors hover:border-slate-500 focus:border-cyan-400"
+                              >
+                                <span className="flex items-center gap-2">
+                                  <span className="text-base leading-none">
+                                    {ISSUE_TYPE_OPTIONS.find((o) => o.value === form.type)?.icon}
+                                  </span>
+                                  <span>
+                                    {ISSUE_TYPE_OPTIONS.find((o) => o.value === form.type)?.label}
+                                  </span>
                                 </span>
-                                <span>
-                                  {ISSUE_TYPE_OPTIONS.find((o) => o.value === form.type)?.label}
-                                </span>
-                              </span>
-                              <ChevronDown
-                                className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${typeDropdownOpen ? 'rotate-180' : ''}`}
-                              />
-                            </button>
+                                <ChevronDown
+                                  className={`h-4 w-4 text-slate-400 transition-transform duration-200 ${typeDropdownOpen ? 'rotate-180' : ''}`}
+                                />
+                              </button>
 
-                            {typeDropdownOpen && (
-                              <div className="absolute left-0 top-[calc(100%+6px)] z-30 w-full overflow-hidden rounded-xl border border-slate-700 bg-slate-900 shadow-[0_16px_48px_rgba(0,0,0,0.45)]">
-                                <div className="max-h-[260px] overflow-y-auto py-1">
-                                  {ISSUE_TYPE_OPTIONS.map((option) => (
-                                    <button
-                                      key={option.value}
-                                      type="button"
-                                      onClick={() => {
-                                        handleInputChange('type', option.value);
-                                        setTypeDropdownOpen(false);
-                                      }}
-                                      className={cn(
-                                        'flex w-full items-start gap-3 px-3 py-2.5 text-left transition-colors hover:bg-cyan-500/10',
-                                        form.type === option.value && 'bg-cyan-500/15'
-                                      )}
-                                    >
-                                      <span className="mt-0.5 text-base leading-none">
-                                        {option.icon}
-                                      </span>
-                                      <div className="flex-1 min-w-0">
-                                        <div
-                                          className={cn(
-                                            'text-sm font-medium',
-                                            form.type === option.value
-                                              ? 'text-cyan-300'
-                                              : 'text-slate-200'
-                                          )}
-                                        >
-                                          {option.label}
+                              {typeDropdownOpen && (
+                                <div className="absolute left-0 top-[calc(100%+6px)] z-30 w-full overflow-hidden rounded-xl border border-slate-700 bg-slate-900 shadow-[0_16px_48px_rgba(0,0,0,0.45)]">
+                                  <div className="max-h-[260px] overflow-y-auto py-1">
+                                    {ISSUE_TYPE_OPTIONS.map((option) => (
+                                      <button
+                                        key={option.value}
+                                        type="button"
+                                        onClick={() => {
+                                          handleInputChange('type', option.value);
+                                          setTypeDropdownOpen(false);
+                                        }}
+                                        className={cn(
+                                          'flex w-full items-start gap-3 px-3 py-2.5 text-left transition-colors hover:bg-cyan-500/10',
+                                          form.type === option.value && 'bg-cyan-500/15'
+                                        )}
+                                      >
+                                        <span className="mt-0.5 text-base leading-none">
+                                          {option.icon}
+                                        </span>
+                                        <div className="flex-1 min-w-0">
+                                          <div
+                                            className={cn(
+                                              'text-sm font-medium',
+                                              form.type === option.value
+                                                ? 'text-cyan-300'
+                                                : 'text-slate-200'
+                                            )}
+                                          >
+                                            {option.label}
+                                          </div>
+                                          <div className="text-xs text-slate-500 mt-0.5 truncate">
+                                            {option.desc}
+                                          </div>
                                         </div>
-                                        <div className="text-xs text-slate-500 mt-0.5 truncate">
-                                          {option.desc}
-                                        </div>
-                                      </div>
-                                      {form.type === option.value && (
-                                        <span className="mt-1 text-xs text-cyan-400">✓</span>
-                                      )}
-                                    </button>
-                                  ))}
+                                        {form.type === option.value && (
+                                          <span className="mt-1 text-xs text-cyan-400">✓</span>
+                                        )}
+                                      </button>
+                                    ))}
+                                  </div>
                                 </div>
-                              </div>
-                            )}
+                              )}
+                            </div>
                           </div>
+
+                          <label className="space-y-2 text-sm">
+                            <span className="text-slate-300">联系方式（可选）</span>
+                            <input
+                              type="text"
+                              value={form.contact}
+                              onChange={(event) => handleInputChange('contact', event.target.value)}
+                              placeholder="例如：GitHub 用户名 / 邮箱"
+                              maxLength={120}
+                              className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-400"
+                            />
+                          </label>
                         </div>
 
                         <label className="space-y-2 text-sm">
-                          <span className="text-slate-300">联系方式（可选）</span>
+                          <div className="flex items-center justify-between text-slate-300">
+                            <span>标题</span>
+                            <span className="text-xs text-slate-500">{titleLength}/256</span>
+                          </div>
                           <input
                             type="text"
-                            value={form.contact}
-                            onChange={(event) => handleInputChange('contact', event.target.value)}
-                            placeholder="例如：GitHub 用户名 / 邮箱"
-                            maxLength={120}
+                            value={form.title}
+                            onChange={(event) => handleInputChange('title', event.target.value)}
+                            placeholder="请简要描述问题或建议"
+                            maxLength={256}
                             className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-400"
                           />
                         </label>
-                      </div>
-
-                      <label className="space-y-2 text-sm">
-                        <div className="flex items-center justify-between text-slate-300">
-                          <span>标题</span>
-                          <span className="text-xs text-slate-500">{titleLength}/256</span>
-                        </div>
-                        <input
-                          type="text"
-                          value={form.title}
-                          onChange={(event) => handleInputChange('title', event.target.value)}
-                          placeholder="请简要描述问题或建议"
-                          maxLength={256}
-                          className="w-full rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-400"
-                        />
-                      </label>
-
-                      <label className="space-y-2 text-sm">
-                        <div className="flex items-center justify-between text-slate-300">
-                          <span>问题描述</span>
-                          <span className="text-xs text-slate-500">{descriptionLength}/65536</span>
-                        </div>
-                        <textarea
-                          value={form.description}
-                          onChange={(event) => handleInputChange('description', event.target.value)}
-                          placeholder="请说明当前遇到的问题、场景或改进建议"
-                          rows={5}
-                          maxLength={65536}
-                          className="w-full resize-y rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-400"
-                        />
-                      </label>
-
-                      <div className="grid gap-4 sm:grid-cols-2">
-                        <label className="space-y-2 text-sm">
-                          <span className="text-slate-300">复现步骤（可选）</span>
-                          <textarea
-                            value={form.reproduction}
-                            onChange={(event) =>
-                              handleInputChange('reproduction', event.target.value)
-                            }
-                            placeholder="1. 进入页面... 2. 点击..."
-                            rows={4}
-                            maxLength={3000}
-                            className="w-full resize-y rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-400"
-                          />
-                        </label>
 
                         <label className="space-y-2 text-sm">
-                          <span className="text-slate-300">期望结果（可选）</span>
-                          <textarea
-                            value={form.expected}
-                            onChange={(event) => handleInputChange('expected', event.target.value)}
-                            placeholder="你希望它表现为..."
-                            rows={4}
-                            maxLength={3000}
-                            className="w-full resize-y rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-400"
-                          />
-                        </label>
-                      </div>
-
-                      {turnstileEnabled ? (
-                        <div className="space-y-2 text-sm">
-                          <span className="text-slate-300">人机验证</span>
-                          <div className="rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-3">
-                            <div ref={turnstileContainerRef} />
+                          <div className="flex items-center justify-between text-slate-300">
+                            <span>问题描述</span>
+                            <span className="text-xs text-slate-500">
+                              {descriptionLength}/65536
+                            </span>
                           </div>
-                          <p className="text-xs text-slate-500">
-                            {turnstileReady
-                              ? '请完成验证后再提交。'
-                              : '正在加载验证组件，请稍候...'}
-                          </p>
+                          <textarea
+                            value={form.description}
+                            onChange={(event) =>
+                              handleInputChange('description', event.target.value)
+                            }
+                            placeholder="请说明当前遇到的问题、场景或改进建议"
+                            rows={5}
+                            maxLength={65536}
+                            className="w-full resize-y rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-400"
+                          />
+                        </label>
+
+                        <div className="grid gap-4 sm:grid-cols-2">
+                          <label className="space-y-2 text-sm">
+                            <span className="text-slate-300">复现步骤（可选）</span>
+                            <textarea
+                              value={form.reproduction}
+                              onChange={(event) =>
+                                handleInputChange('reproduction', event.target.value)
+                              }
+                              placeholder="1. 进入页面... 2. 点击..."
+                              rows={4}
+                              maxLength={3000}
+                              className="w-full resize-y rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-400"
+                            />
+                          </label>
+
+                          <label className="space-y-2 text-sm">
+                            <span className="text-slate-300">期望结果（可选）</span>
+                            <textarea
+                              value={form.expected}
+                              onChange={(event) =>
+                                handleInputChange('expected', event.target.value)
+                              }
+                              placeholder="你希望它表现为..."
+                              rows={4}
+                              maxLength={3000}
+                              className="w-full resize-y rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2.5 text-slate-100 outline-none transition-colors placeholder:text-slate-500 focus:border-cyan-400"
+                            />
+                          </label>
                         </div>
-                      ) : null}
 
-                      {/* anti-bot honeypot */}
-                      <input
-                        value={form.website}
-                        onChange={(event) => handleInputChange('website', event.target.value)}
-                        tabIndex={-1}
-                        autoComplete="off"
-                        aria-hidden="true"
-                        className="hidden"
-                      />
+                        {turnstileEnabled ? (
+                          <div className="space-y-2 text-sm">
+                            <span className="text-slate-300">人机验证</span>
+                            <div className="rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-3">
+                              <div ref={turnstileContainerRef} />
+                            </div>
+                            <p className="text-xs text-slate-500">
+                              {turnstileReady
+                                ? '请完成验证后再提交。'
+                                : '正在加载验证组件，请稍候...'}
+                            </p>
+                          </div>
+                        ) : null}
 
-                      <div className="flex flex-wrap items-center justify-end gap-3 pt-1">
-                        <button
-                          type="button"
-                          onClick={resetForm}
-                          disabled={submitting}
-                          className="rounded-full border border-slate-600 bg-slate-900/60 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800 cursor-pointer disabled:cursor-not-allowed disabled:opacity-55"
-                        >
-                          清空
-                        </button>
-                        <button
-                          type="submit"
-                          disabled={submitting}
-                          className="rounded-full border border-cyan-400/70 bg-gradient-to-r from-cyan-600/90 to-blue-600/90 px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-92 cursor-pointer disabled:cursor-not-allowed disabled:opacity-55"
-                        >
-                          {submitting ? '提交中...' : '提交 Issue'}
-                        </button>
-                      </div>
-                    </form>
+                        {/* anti-bot honeypot */}
+                        <input
+                          value={form.website}
+                          onChange={(event) => handleInputChange('website', event.target.value)}
+                          tabIndex={-1}
+                          autoComplete="off"
+                          aria-hidden="true"
+                          className="hidden"
+                        />
+
+                        <div className="flex flex-wrap items-center justify-end gap-3 pt-1">
+                          <button
+                            type="button"
+                            onClick={resetForm}
+                            disabled={submitting}
+                            className="rounded-full border border-slate-600 bg-slate-900/60 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:bg-slate-800 cursor-pointer disabled:cursor-not-allowed disabled:opacity-55"
+                          >
+                            清空
+                          </button>
+                          <button
+                            type="submit"
+                            disabled={submitting}
+                            className="rounded-full border border-cyan-400/70 bg-gradient-to-r from-cyan-600/90 to-blue-600/90 px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-92 cursor-pointer disabled:cursor-not-allowed disabled:opacity-55"
+                          >
+                            {submitting ? '提交中...' : '提交 Issue'}
+                          </button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : null,
+              )}
+
+              {createdIssue && (
+                <div
+                  role="status"
+                  aria-live="polite"
+                  className="fixed left-1/2 top-4 z-[10020] w-[min(calc(100%-2.5rem),520px)] -translate-x-1/2 pointer-events-none"
+                >
+                  <div className="pointer-events-auto flex items-start gap-2 rounded-xl border border-emerald-500/30 bg-slate-900/90 px-3 py-2.5 shadow-[0_12px_32px_rgba(0,0,0,0.6)] backdrop-blur-md">
+                    <CircleCheck className="mt-0.5 h-4 w-4 shrink-0 text-emerald-300" />
+                    <div className="flex-1 text-sm leading-5 text-emerald-100">
+                      <p>已成功创建 Issue #{createdIssue.issueNumber}</p>
+                      <a
+                        href={createdIssue.issueUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-1 inline-block text-emerald-200 underline decoration-emerald-300/60 underline-offset-2 hover:text-emerald-100"
+                      >
+                        查看 Issue 详情 ↗
+                      </a>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setCreatedIssue(null)}
+                      className="inline-flex size-5 cursor-pointer items-center justify-center rounded-md text-emerald-200/85 transition-colors hover:bg-emerald-500/20 hover:text-emerald-100"
+                      aria-label="关闭成功提示"
+                    >
+                      <X className="h-3.5 w-3.5" />
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>,
             document.body
           )
         : null}
