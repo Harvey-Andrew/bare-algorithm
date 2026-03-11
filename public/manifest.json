@@ -1,0 +1,17 @@
+{
+  "name": "朴素算法",
+  "short_name": "朴素算法",
+  "description": "通过交互式动画直观理解算法逻辑，覆盖 200+ LeetCode 题目的可视化解题",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#06b6d4",
+  "icons": [
+    {
+      "src": "/barealgo.png",
+      "sizes": "192x192 288x286",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

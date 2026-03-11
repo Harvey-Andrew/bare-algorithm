@@ -33,8 +33,14 @@ export const metadata: Metadata = {
     '算法动画',
     '交互式学习',
     'algorithm visualization',
+    '前端面试',
+    '算法图解',
+    '前端刷题',
+    'React',
+    'Next.js',
   ],
-  authors: [{ name: '朴素算法' }],
+  authors: [{ name: 'Harvey Andrew', url: 'https://github.com/Harvey-Andrew' }],
+  creator: 'Harvey Andrew',
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
@@ -43,9 +49,9 @@ export const metadata: Metadata = {
     description: '通过交互式动画直观理解算法逻辑，覆盖 200+ LeetCode 题目的可视化解题',
     images: [
       {
-        url: '/barealgo.png',
-        width: 288,
-        height: 286,
+        url: '/barealgo-banner.png',
+        width: 1200,
+        height: 630,
         alt: '朴素算法 - 算法可视化平台',
       },
     ],
@@ -54,12 +60,14 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '朴素算法',
     description: '通过交互式动画直观理解算法逻辑，覆盖 200+ LeetCode 题目的可视化解题',
-    images: ['/barealgo.png'],
+    images: ['/barealgo-banner.png'],
+    creator: '@Harvey_Andrew',
   },
   icons: {
-    icon: '/icon.png',
-    apple: '/icon.png',
+    icon: '/barealgo.png',
+    apple: '/barealgo.png',
   },
+  manifest: '/manifest.json',
 };
 
 export const viewport: Viewport = {
