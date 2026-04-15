@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Search } from 'lucide-react';
 
 type SearchDialogComponent = React.ComponentType<{
@@ -23,6 +23,7 @@ interface SearchTriggerProps {
 }
 
 export function SearchTrigger({ compact = false }: SearchTriggerProps) {
+  const [isMacClient, setIsMacClient] = useState(false);
   const [open, setOpen] = useState(false);
   const [SearchDialogComponent, setSearchDialogComponent] = useState<SearchDialogComponent | null>(
     null
@@ -40,11 +41,9 @@ export function SearchTrigger({ compact = false }: SearchTriggerProps) {
     setOpen(true);
   }, [SearchDialogComponent]);
 
-  const isMac = useMemo(() => {
-    if (typeof navigator !== 'undefined') {
-      return navigator.platform.toLowerCase().includes('mac');
-    }
-    return false;
+  useEffect(() => {
+    const isMac = /Mac|iPhone|iPad/.test(navigator.platform);
+    setTimeout(() => setIsMacClient(isMac), 0);
   }, []);
 
   useEffect(() => {
@@ -88,7 +87,7 @@ export function SearchTrigger({ compact = false }: SearchTriggerProps) {
           <>
             <span className="hidden sm:inline">搜索算法...</span>
             <kbd className="ml-1 hidden sm:inline-flex items-center gap-0.5 rounded border border-slate-600 bg-slate-700/50 px-1.5 py-0.5 font-mono text-[10px] text-slate-400">
-              {isMac ? 'Cmd' : 'Ctrl'}+K
+              {isMacClient ? 'Cmd' : 'Ctrl'}+K
             </kbd>
           </>
         )}
