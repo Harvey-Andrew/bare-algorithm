@@ -85,6 +85,7 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" className="dark">
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background`}
         style={{ minHeight: '100dvh' }}
       >
